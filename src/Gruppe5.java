@@ -12,5 +12,6 @@ public class Gruppe5 {
 
         System.out.println("Nåårh, okay...");
         scanner.close();
+        int tal = 1;
     }
 }
