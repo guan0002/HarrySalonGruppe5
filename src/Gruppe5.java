@@ -5,5 +5,12 @@ public class Gruppe5 {
         System.out.println("Hello World!");
        Scanner scanner = new Scanner(System.in);
 
+       String hilsen;
+
+        System.out.println("Hello til hvem?");
+        hilsen = scanner.nextLine();
+
+        System.out.println("Nåårh, okay...");
+        scanner.close();
     }
 }
