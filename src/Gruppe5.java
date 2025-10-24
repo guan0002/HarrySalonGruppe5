@@ -7,6 +7,7 @@ public class Gruppe5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Customer> CustomerBookings= new ArrayList<>();
 
         System.out.println("Welcome to your booking system!\n");
         System.out.println("Press 1-9 to access the different menus\n");
@@ -27,9 +28,6 @@ public class Gruppe5 {
         }
 
 
-
-
-        ArrayList<Customer> CustomerBookings= new ArrayList<>();
 
         Customer c1 = new Customer("Jens", "jens@pik.dk", LocalDate.of(2025, 10, 24), LocalTime.of(13, 12));
         CustomerBookings.add(c1);
