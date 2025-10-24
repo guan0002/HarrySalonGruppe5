@@ -58,6 +58,9 @@ public class Gruppe5 {
                 test7 = 9;
                 break;
 
+            default:
+                System.out.println("Please enter a valid choice");
+
 
         }
 
