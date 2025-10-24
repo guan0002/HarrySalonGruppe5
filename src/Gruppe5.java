@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Gruppe5 {
     public static void main(String[] args) {
 
+
+
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
-        ArrayList<Customer> customerBookings = new ArrayList<>();
+
         while (run) {
             System.out.println("Welcome to your booking system!\n");
             System.out.println("Press 1-9 to access the different menus\n");
@@ -83,7 +85,7 @@ public class Gruppe5 {
 
             }
 
-
+            ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner imput = new Scanner(System.in);
 
             System.out.println("Write customer name: ");
