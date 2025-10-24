@@ -30,10 +30,9 @@ public class Main {
             };
 
 
-
-for(int i = 1;i<printMenus.length;i++) {
-    System.out.println(i + ": " + printMenus[i]);
-}
+            for (int i = 1; i < printMenus.length; i++) {
+                System.out.println(i + ": " + printMenus[i]);
+            }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
 
@@ -89,6 +88,7 @@ for(int i = 1;i<printMenus.length;i++) {
 
 
             }
+        }
 
             ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner imput = new Scanner(System.in);
@@ -128,7 +128,7 @@ for(int i = 1;i<printMenus.length;i++) {
             imput.close();
 
 
-        }
+
 
     }
 }
