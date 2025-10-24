@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
+
 
         while (run) {
             System.out.println("Welcome to your booking system!\n");
@@ -30,65 +30,65 @@ public class Main {
             };
 
 
-
-for(int i = 1;i<printMenus.length;i++) {
-    System.out.println(i + ": " + printMenus[i]);
-}
+            for (int i = 1; i < printMenus.length; i++) {
+                System.out.println(i + ": " + printMenus[i]);
+            }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
 
-            int Booking = 1;
-            int CustomerList = 2;
-            int Creditors = 3;
-            int Economics = 4;
-            int Vacation = 5;
-            int test4 = 6;
-            int test5 = 7;
-            int test6 = 8;
-            int test7 = 9;
-
             switch (choice) {
+                case 0:
+                    System.out.println("You have exited the system, goodbye");
+                    run = false;
+                    break;
+
                 case 1:
-                    Booking = 1;
+                    Booking(scanner);
                     break;
 
                 case 2:
-                    CustomerList = 2;
+                    CustomerList(scanner);
                     break;
 
                 case 3:
-                    Creditors = 3;
+                    Creditors(scanner);
                     break;
 
                 case 4:
-                    Economics = 4;
+                    Economics(scanner);
                     break;
 
                 case 5:
-                    Vacation = 5;
+                    Vacation(scanner);
                     break;
 
                 case 6:
-                    test4 = 6;
+                    test4(scanner);
                     break;
 
                 case 7:
-                    test5 = 7;
+                    test5(scanner);
                     break;
 
                 case 8:
-                    test6 = 8;
+                    test6(scanner);
                     break;
 
                 case 9:
-                    test7 = 9;
+                    test7(scanner);
                     break;
 
                 default:
                     System.out.println("Please enter a valid choice");
 
-
             }
+        }
+        scanner.close();
+    }
+
+
+
+
 
             ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner imput = new Scanner(System.in);
