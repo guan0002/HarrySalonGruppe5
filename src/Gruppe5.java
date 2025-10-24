@@ -13,13 +13,51 @@ public class Gruppe5 {
 
         int booking = 1;
         int delete = 2;
+        int test1 = 3;
+        int test2 = 4;
+        int test3 = 5;
+        int test4 = 6;
+        int test5 = 7;
+        int test6 = 8;
+        int test7 = 9;
 
         switch (choice) {
             case 1:
                 booking = 1;
+                break;
 
             case 2:
                 delete = 2;
+                break;
+
+            case 3:
+                test1 = 3;
+                break;
+
+            case 4:
+                test2 = 4;
+                break;
+
+            case 5:
+                test3 = 5;
+                break;
+
+            case 6:
+                test4 = 6;
+                break;
+
+            case 7:
+                test5 = 7;
+                break;
+
+            case 8:
+                test6 = 8;
+                break;
+
+            case 9:
+                test7 = 9;
+                break;
+
 
         }
 
