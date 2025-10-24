@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
 
@@ -89,6 +88,9 @@ public class Main {
 
             }
         }
+    }
+
+         public void Booking() {
 
             ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner imput = new Scanner(System.in);
@@ -128,7 +130,5 @@ public class Main {
             imput.close();
 
 
-
-
-    }
+        }
 }
