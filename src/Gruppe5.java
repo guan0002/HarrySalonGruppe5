@@ -8,7 +8,7 @@ public class Gruppe5 {
 
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
-        ArrayList<Customer> CustomerBookings = new ArrayList<>();
+        ArrayList<Customer> customerBookings = new ArrayList<>();
         while (run) {
             System.out.println("Welcome to your booking system!\n");
             System.out.println("Press 1-9 to access the different menus\n");
@@ -30,63 +30,97 @@ public class Gruppe5 {
             System.out.println(printMenus[0]);
             int choice = scanner.nextInt();
 
-        int Booking = 1;
-        int CustomerList = 2;
-        int Creditors = 3;
-        int Economics = 4;
-        int Vacation = 5;
-        int test4 = 6;
-        int test5 = 7;
-        int test6 = 8;
-        int test7 = 9;
+            int Booking = 1;
+            int CustomerList = 2;
+            int Creditors = 3;
+            int Economics = 4;
+            int Vacation = 5;
+            int test4 = 6;
+            int test5 = 7;
+            int test6 = 8;
+            int test7 = 9;
 
-        switch (choice) {
-            case 1:
-                Booking = 1;
-                break;
+            switch (choice) {
+                case 1:
+                    Booking = 1;
+                    break;
 
-            case 2:
-                CustomerList = 2;
-                break;
+                case 2:
+                    CustomerList = 2;
+                    break;
 
-            case 3:
-                Creditors = 3;
-                break;
+                case 3:
+                    Creditors = 3;
+                    break;
 
-            case 4:
-                Economics= 4;
-                break;
+                case 4:
+                    Economics = 4;
+                    break;
 
-            case 5:
-                Vacation = 5;
-                break;
+                case 5:
+                    Vacation = 5;
+                    break;
 
-            case 6:
-                test4 = 6;
-                break;
+                case 6:
+                    test4 = 6;
+                    break;
 
-            case 7:
-                test5 = 7;
-                break;
+                case 7:
+                    test5 = 7;
+                    break;
 
-            case 8:
-                test6 = 8;
-                break;
+                case 8:
+                    test6 = 8;
+                    break;
 
-            case 9:
-                test7 = 9;
-                break;
+                case 9:
+                    test7 = 9;
+                    break;
 
-            default:
-                System.out.println("Please enter a valid choice");
+                default:
+                    System.out.println("Please enter a valid choice");
+
+
+            }
+
+
+            Scanner imput = new Scanner(System.in);
+
+            System.out.println("Write customer name: ");
+            String name = imput.nextLine();
+
+            System.out.println("Write customer mail: ");
+            String email = imput.nextLine();
+
+            System.out.println("Write year: ");
+            int year = imput.nextInt();
+
+            System.out.println("Write month: ");
+            int month = imput.nextInt();
+
+            System.out.println("Write day: ");
+            int day = imput.nextInt();
+
+            System.out.println("Write time: ");
+            int hour = imput.nextInt();
+
+            System.out.println("Write minute: ");
+            int minute = imput.nextInt();
+
+
+            LocalDate date = LocalDate.of(year, month, day);
+            LocalTime time = LocalTime.of(hour, minute);
+
+
+            Customer c = new Customer(name, email, date, time);
+
+
+            customerBookings.add(c);
+
+            imput.close();
 
 
         }
-
-
-
-        Customer c1 = new Customer("Jens", "jens@pik.dk", LocalDate.of(2025, 10, 24), LocalTime.of(13, 12));
-        CustomerBookings.add(c1);
 
     }
 }
