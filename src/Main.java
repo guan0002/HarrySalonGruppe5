@@ -29,7 +29,12 @@ public class Main {
                     "test7",
             };
 
-            System.out.println(printMenus[0]);
+
+
+for(int i = 1;i<printMenus.length;i++) {
+    System.out.println(i + ": " + printMenus[i]);
+}
+            System.out.println("Enter a number:");
             int choice = scanner.nextInt();
 
             int Booking = 1;
@@ -88,6 +93,7 @@ public class Main {
             ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner imput = new Scanner(System.in);
 
+
             System.out.println("Write customer name: ");
             String name = imput.nextLine();
 
@@ -103,7 +109,7 @@ public class Main {
             System.out.println("Write day: ");
             int day = imput.nextInt();
 
-            System.out.println("Write time: ");
+            System.out.println("Write hour: ");
             int hour = imput.nextInt();
 
             System.out.println("Write minute: ");
