@@ -1,23 +1,17 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 public class Customer {
 
     String name;
     LocalDate date;
     LocalTime time;
-    ArrayList<Customer> CustomerBookings= new ArrayList<>();
+    String email;
 
-    public Customer(String name, LocalDate date, LocalTime time) {
+    public Customer(String name, String email, LocalDate date, LocalTime time) {
         this.name=name;
+        this.email=email;
         this.date=date;
         this.time=time;
     }
-
-    public void BookCustomer() {
-        CustomerBookings.add();
-
-    }
-
 }
