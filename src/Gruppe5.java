@@ -15,11 +15,11 @@ public class Gruppe5 {
 
         int choice = scanner.nextInt();
 
-        int booking = 1;
-        int delete = 2;
-        int test1 = 3;
-        int test2 = 4;
-        int test3 = 5;
+        int Booking = 1;
+        int CustomerList = 2;
+        int Creditors = 3;
+        int Economics = 4;
+        int Vacation = 5;
         int test4 = 6;
         int test5 = 7;
         int test6 = 8;
@@ -27,23 +27,23 @@ public class Gruppe5 {
 
         switch (choice) {
             case 1:
-                booking = 1;
+                Booking = 1;
                 break;
 
             case 2:
-                delete = 2;
+                CustomerList = 2;
                 break;
 
             case 3:
-                test1 = 3;
+                Creditors = 3;
                 break;
 
             case 4:
-                test2 = 4;
+                Economics= 4;
                 break;
 
             case 5:
-                test3 = 5;
+                Vacation = 5;
                 break;
 
             case 6:
