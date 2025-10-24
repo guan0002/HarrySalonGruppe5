@@ -11,9 +11,9 @@ public class customerList {
 
         while(true) {
 
-            //if (userInput == X
-               // System.out.println(CustomerBookings);
-            //else
+         //   if (userInput == 2)
+          //      System.out.println(customerBookings);
+           // else
                 System.out.println("ERROR");
 
             userInput = input.nextLine();
