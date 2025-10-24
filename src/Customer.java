@@ -16,6 +16,7 @@ public class Customer {
     }
 
     public void BookCustomer() {
+        CustomerBookings.add();
 
     }
 
