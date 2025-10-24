@@ -7,13 +7,28 @@ public class Gruppe5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Customer> CustomerBookings= new ArrayList<>();
+        boolean run = true;
+        ArrayList<Customer> CustomerBookings = new ArrayList<>();
+        while (run) {
+            System.out.println("Welcome to your booking system!\n");
+            System.out.println("Press 1-9 to access the different menus\n");
+            System.out.println("Press 0 to go back to the main menu\n");
 
-        System.out.println("Welcome to your booking system!\n");
-        System.out.println("Press 1-9 to access the different menus\n");
-        System.out.println("Press 0 to go back to the main menu\n");
+            String[] printMenus = {
+                    "",
+                    "Booking",
+                    "CustomerList",
+                    "Creditors",
+                    "Economics",
+                    "Vacation",
+                    "test4",
+                    "test5",
+                    "test6",
+                    "test7",
+            };
 
-        int choice = scanner.nextInt();
+            System.out.println(printMenus[0]);
+            int choice = scanner.nextInt();
 
         int Booking = 1;
         int CustomerList = 2;

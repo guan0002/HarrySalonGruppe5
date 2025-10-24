@@ -1,5 +1,5 @@
 import java.util.Scanner;
-    public class MainMenuExampleCHAT {
+    public class MainMenuExample {
         public static void main(String[] args) {
 
             Scanner scanner = new Scanner(System.in);
