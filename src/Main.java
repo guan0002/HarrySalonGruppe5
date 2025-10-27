@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    static ArrayList<Customer> customerBookings = new ArrayList<>();
+
     public static void main(String[] args) {
 
 
@@ -93,7 +95,6 @@ public class Main {
 
          public static void Booking() {
 
-            ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner input = new Scanner(System.in);
 
 
@@ -127,6 +128,8 @@ public class Main {
 
 
             customerBookings.add(c);
+
+
 
              System.out.println("Kunden "+name+"er nu blevet tilføjet til din booking liste, med tiden "+date+" - "+time+".");
 
