@@ -145,6 +145,28 @@ public class Main {
             return;
         }
 
+        LocalTime open = LocalTime.of(10, 0);
+        LocalTime close = LocalTime.of(18, 0);
+
+        if (time.isBefore(open) || time.isAfter(close)) {
+            System.out.println("You can only book between 10.00 and 18:00");
+            while(!bookingFail) {
+                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
+                int answer = input.nextInt();
+                if (answer==0) {
+                    bookingFail=true;
+                }
+                else if (answer==1) {
+                    Booking();
+                    bookingFail=true;
+                }
+                else {
+                }
+            }
+            return;
+
+        }
+
 
         Customer c = new Customer(name, email, date, time);
 
