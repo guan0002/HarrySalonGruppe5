@@ -2,10 +2,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    static ArrayList<Customer> customerBookings = new ArrayList<>();
 
+    public static void main(String[] args) {
 
 
         Scanner scanner = new Scanner(System.in);
@@ -30,10 +32,9 @@ public class Main {
             };
 
 
-
-for(int i = 1;i<printMenus.length;i++) {
-    System.out.println(i + ": " + printMenus[i]);
-}
+            for (int i = 1; i < printMenus.length; i++) {
+                System.out.println(i + ": " + printMenus[i]);
+            }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
 
@@ -50,10 +51,12 @@ for(int i = 1;i<printMenus.length;i++) {
             switch (choice) {
                 case 1:
                     Booking = 1;
+                    Booking();
                     break;
 
                 case 2:
                     CustomerList = 2;
+                    CustomerList();
                     break;
 
                 case 3:
@@ -89,46 +92,89 @@ for(int i = 1;i<printMenus.length;i++) {
 
 
             }
+        }
+    }
 
-            ArrayList<Customer> customerBookings = new ArrayList<>();
-            Scanner imput = new Scanner(System.in);
+    public static void Booking() {
 
-
-            System.out.println("Write customer name: ");
-            String name = imput.nextLine();
-
-            System.out.println("Write customer mail: ");
-            String email = imput.nextLine();
-
-            System.out.println("Write year: ");
-            int year = imput.nextInt();
-
-            System.out.println("Write month: ");
-            int month = imput.nextInt();
-
-            System.out.println("Write day: ");
-            int day = imput.nextInt();
-
-            System.out.println("Write hour: ");
-            int hour = imput.nextInt();
-
-            System.out.println("Write minute: ");
-            int minute = imput.nextInt();
+        Scanner input = new Scanner(System.in);
+        boolean tilbage = false;
+        boolean bookingFail=false;
 
 
-            LocalDate date = LocalDate.of(year, month, day);
-            LocalTime time = LocalTime.of(hour, minute);
+        System.out.println("Write customer name: ");
+        String name = input.nextLine();
+
+        System.out.println("Write customer mail: ");
+        String email = input.nextLine();
+
+        System.out.println("Write year: ");
+        int year = input.nextInt();
+
+        System.out.println("Write month: ");
+        int month = input.nextInt();
+
+        System.out.println("Write day: ");
+        int day = input.nextInt();
+
+        System.out.println("Write hour: ");
+        int hour = input.nextInt();
+
+        System.out.println("Write minute: ");
+        int minute = input.nextInt();
 
 
-            Customer c = new Customer(name, email, date, time);
+        LocalDate date = LocalDate.of(year, month, day);
+        LocalTime time = LocalTime.of(hour, minute);
+
+        if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
+            System.out.println("Sorry, you cannot book on weekends, choose another date.");
+            while(!bookingFail) {
+                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
+                int answer = input.nextInt();
+                if (answer==0) {
+                    bookingFail=true;
+                }
+                else if (answer==1) {
+                    Booking();
+                    bookingFail=true;
+                }
+                else {
+                }
+            }
+            return;
+        }
 
 
-            customerBookings.add(c);
+        Customer c = new Customer(name, email, date, time);
 
-            imput.close();
+
+        customerBookings.add(c);
+
+
+        System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
+
+        System.out.println("Press 0 to get back to the menu.");
+        int tilbageTilMenu = input.nextInt();
+        while (!tilbage) {
+            if (tilbageTilMenu == 0) {
+                tilbage = true;
+            } else {
+                System.out.println("Press 0 to go back to the menu.");
+                input.nextInt();
+            }
 
 
         }
+    }
+
+    public static void CustomerList() {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Customer List:");
+        System.out.println(customerBookings);
 
     }
 }
+
