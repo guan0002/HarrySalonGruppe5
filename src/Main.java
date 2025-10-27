@@ -55,6 +55,7 @@ public class Main {
 
                 case 2:
                     CustomerList = 2;
+                    CustomerList();
                     break;
 
                 case 3:
