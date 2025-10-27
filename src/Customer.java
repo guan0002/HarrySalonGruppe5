@@ -14,4 +14,12 @@ public class Customer {
         this.date=date;
         this.time=time;
     }
+
+    @Override
+    public String toString() {
+        return "Name: "+name+
+                ", Email: "+email+
+                ", Date: "+date+
+                ", Time: "+time;
+    }
 }

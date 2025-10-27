@@ -99,6 +99,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
+        boolean bookingFail=false;
 
 
         System.out.println("Write customer name: ");
@@ -126,6 +127,24 @@ public class Main {
         LocalDate date = LocalDate.of(year, month, day);
         LocalTime time = LocalTime.of(hour, minute);
 
+        if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
+            System.out.println("Sorry, you cannot book on weekends, choose another date.");
+            while(!bookingFail) {
+                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
+                int answer = input.nextInt();
+                if (answer==0) {
+                    bookingFail=true;
+                }
+                else if (answer==1) {
+                    Booking();
+                    bookingFail=true;
+                }
+                else {
+                }
+            }
+            return;
+        }
+
 
         Customer c = new Customer(name, email, date, time);
 
@@ -133,7 +152,7 @@ public class Main {
         customerBookings.add(c);
 
 
-        System.out.println("The customer " + name + "has now been added to your booking list, with the time " + date + " - " + time + ".");
+        System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
 
         System.out.println("Press 0 to get back to the menu.");
         int tilbageTilMenu = input.nextInt();
