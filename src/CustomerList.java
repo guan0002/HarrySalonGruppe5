@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public static void CustomerList() {
+// public static void CustomerList() {
 
-        Scanner input=new Scanner(System.in);
+ //       Scanner input=new Scanner(System.in);
 
-        System.out.println("Customer List:");
-        System.out.println(list);
+  //      System.out.println("Customer List:");
+     //   System.out.println(list);
 
 }
