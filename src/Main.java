@@ -129,7 +129,7 @@ public class Main {
             customerBookings.add(c);
 
              System.out.println("Kunden "+name+"er nu blevet tilføjet til din booking liste, med tiden "+date+" - "+time+".");
-             input.close();
+
 
         }
 }
