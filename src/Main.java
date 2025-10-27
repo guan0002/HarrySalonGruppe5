@@ -107,7 +107,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
-        boolean bookingFail=false;
+        boolean bookingFail = false;
 
 
         System.out.println("Write customer name: ");
@@ -137,21 +137,18 @@ public class Main {
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
             System.out.println("Sorry, you cannot book on weekends, choose another date.");
-            while(!bookingFail) {
+            while (!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
-int answer = input.nextInt();
+                int answer = input.nextInt();
                 if (!input.hasNextInt()) {
                     System.out.println("Please enter a number");
 
-                }
-                    else if (answer==0) {
-                    bookingFail=true;
-                }
-                else if (answer==1) {
+                } else if (answer == 0) {
+                    bookingFail = true;
+                } else if (answer == 1) {
                     Booking();
-                    bookingFail=true;
-                }
-                else {
+                    bookingFail = true;
+                } else {
                 }
             }
             return;
@@ -162,18 +159,16 @@ int answer = input.nextInt();
 
         if (time.isBefore(open) || time.isAfter(close)) {
             System.out.println("You can only book between 10.00 and 18:00");
-            while(!bookingFail) {
+            while (!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
                 int answer = input.nextInt();
-                if (answer==0) {
-                    bookingFail=true;
+                if (answer == 0) {
+                    bookingFail = true;
 
-                }
-                else if (answer==1) {
+                } else if (answer == 1) {
                     Booking();
-                    bookingFail=true;
-                }
-                else {
+                    bookingFail = true;
+                } else {
                 }
             }
             return;
@@ -205,10 +200,20 @@ int answer = input.nextInt();
     public static void CustomerList() {
 
         Scanner input = new Scanner(System.in);
+        boolean tilbage = false;
 
         System.out.println("Customer List:");
         System.out.println(customerBookings);
+        System.out.println("Press 0 to get back to the menu.");
+        while (!tilbage) {
+            int tilbageTilMenu = input.nextInt();
+            if (tilbageTilMenu == 0) {
+                tilbage = true;
+            } else {
+                System.out.println("Press 0 to go back to the menu.");
+            }
 
+        }
     }
 }
 
