@@ -1,11 +1,10 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class customerDatabase {
-    public static void main(String[] args) throws IOException {
-        FileReader fil = new FileReader("src//customerDatabase.txt");
-        BufferedReader ind = new BufferedReader(fil);
-        ArrayList<String> list = new ArrayList<>();
+    public static void main(String[] args) {
 
     }
 }
