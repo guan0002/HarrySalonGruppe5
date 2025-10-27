@@ -196,7 +196,7 @@ public class Main {
 
         System.out.println("Customer List:");
         System.out.println(customerBookings);
-
+        //random kommentar *slet*
     }
 }
 
