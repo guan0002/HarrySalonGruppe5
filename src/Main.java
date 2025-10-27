@@ -93,29 +93,29 @@ public class Main {
          public void Booking() {
 
             ArrayList<Customer> customerBookings = new ArrayList<>();
-            Scanner imput = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
 
 
             System.out.println("Write customer name: ");
-            String name = imput.nextLine();
+            String name = input.nextLine();
 
             System.out.println("Write customer mail: ");
-            String email = imput.nextLine();
+            String email = input.nextLine();
 
             System.out.println("Write year: ");
-            int year = imput.nextInt();
+            int year = input.nextInt();
 
             System.out.println("Write month: ");
-            int month = imput.nextInt();
+            int month = input.nextInt();
 
             System.out.println("Write day: ");
-            int day = imput.nextInt();
+            int day = input.nextInt();
 
             System.out.println("Write hour: ");
-            int hour = imput.nextInt();
+            int hour = input.nextInt();
 
             System.out.println("Write minute: ");
-            int minute = imput.nextInt();
+            int minute = input.nextInt();
 
 
             LocalDate date = LocalDate.of(year, month, day);
@@ -127,7 +127,7 @@ public class Main {
 
             customerBookings.add(c);
 
-            imput.close();
+            input.close();
 
 
         }
