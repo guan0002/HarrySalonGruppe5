@@ -135,4 +135,14 @@ public class Main {
 
 
         }
+
+    public static void CustomerList() {
+
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("Customer List:");
+        System.out.println(customerBookings);
+
+    }
+
 }
