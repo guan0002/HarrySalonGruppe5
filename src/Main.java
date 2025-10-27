@@ -37,6 +37,7 @@ public class Main {
             }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             int Booking = 1;
             int CustomerList = 2;
@@ -61,30 +62,37 @@ public class Main {
 
                 case 3:
                     Creditors = 3;
+                    //Metode her
                     break;
 
                 case 4:
                     Economics = 4;
+                    //Metode her
                     break;
 
                 case 5:
                     Vacation = 5;
+                    //Metode her
                     break;
 
                 case 6:
                     test4 = 6;
+                    //Metode her
                     break;
 
                 case 7:
                     test5 = 7;
+                    //Metode her
                     break;
 
                 case 8:
                     test6 = 8;
+                    //Metode her
                     break;
 
                 case 9:
                     test7 = 9;
+                    //Metode her
                     break;
 
                 default:
@@ -99,7 +107,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
-        boolean bookingFail = false;
+        boolean bookingFail=false;
 
 
         System.out.println("Write customer name: ");
@@ -129,15 +137,21 @@ public class Main {
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
             System.out.println("Sorry, you cannot book on weekends, choose another date.");
-            while (!bookingFail) {
+            while(!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
-                int answer = input.nextInt();
-                if (answer == 0) {
-                    bookingFail = true;
-                } else if (answer == 1) {
+int answer = input.nextInt();
+                if (!input.hasNextInt()) {
+                    System.out.println("Please enter a number");
+
+                }
+                    else if (answer==0) {
+                    bookingFail=true;
+                }
+                else if (answer==1) {
                     Booking();
-                    bookingFail = true;
-                } else {
+                    bookingFail=true;
+                }
+                else {
                 }
             }
             return;
@@ -148,15 +162,18 @@ public class Main {
 
         if (time.isBefore(open) || time.isAfter(close)) {
             System.out.println("You can only book between 10.00 and 18:00");
-            while (!bookingFail) {
+            while(!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
                 int answer = input.nextInt();
-                if (answer == 0) {
-                    bookingFail = true;
-                } else if (answer == 1) {
+                if (answer==0) {
+                    bookingFail=true;
+
+                }
+                else if (answer==1) {
                     Booking();
-                    bookingFail = true;
-                } else {
+                    bookingFail=true;
+                }
+                else {
                 }
             }
             return;
@@ -173,18 +190,18 @@ public class Main {
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
 
         System.out.println("Press 0 to get back to the menu.");
-            while (!tilbage) {
-                int tilbageTilMenu = input.nextInt();
-                if (tilbageTilMenu == 0) {
-                    tilbage = true;
-                }
-                else {
-                    System.out.println("Press 0 to go back to the menu.");
-                }
-
+         int tilbageTilMenu = input.nextInt();
+        while (!tilbage) {
+            if (tilbageTilMenu == 0) {
+                tilbage = true;
+            } else {
+                System.out.println("Press 0 to go back to the menu.");
+                input.nextInt();
             }
 
+
         }
+    }
 
     public static void CustomerList() {
 
@@ -192,7 +209,7 @@ public class Main {
 
         System.out.println("Customer List:");
         System.out.println(customerBookings);
-        //random kommentar *slet*
+
     }
 }
 
