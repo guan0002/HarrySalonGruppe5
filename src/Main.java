@@ -48,6 +48,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     Booking = 1;
+                    Booking();
                     break;
 
                 case 2:
@@ -90,7 +91,7 @@ public class Main {
         }
     }
 
-         public void Booking() {
+         public static void Booking() {
 
             ArrayList<Customer> customerBookings = new ArrayList<>();
             Scanner input = new Scanner(System.in);
