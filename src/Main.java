@@ -190,13 +190,12 @@ int answer = input.nextInt();
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
 
         System.out.println("Press 0 to get back to the menu.");
-         int tilbageTilMenu = input.nextInt();
         while (!tilbage) {
+            int tilbageTilMenu = input.nextInt();
             if (tilbageTilMenu == 0) {
                 tilbage = true;
             } else {
                 System.out.println("Press 0 to go back to the menu.");
-                input.nextInt();
             }
 
 
