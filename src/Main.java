@@ -37,6 +37,7 @@ public class Main {
             }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             int Booking = 1;
             int CustomerList = 2;
