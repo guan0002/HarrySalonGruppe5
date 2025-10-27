@@ -37,6 +37,7 @@ public class Main {
             }
             System.out.println("Enter a number:");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             int Booking = 1;
             int CustomerList = 2;
@@ -61,30 +62,37 @@ public class Main {
 
                 case 3:
                     Creditors = 3;
+                    //Metode her
                     break;
 
                 case 4:
                     Economics = 4;
+                    //Metode her
                     break;
 
                 case 5:
                     Vacation = 5;
+                    //Metode her
                     break;
 
                 case 6:
                     test4 = 6;
+                    //Metode her
                     break;
 
                 case 7:
                     test5 = 7;
+                    //Metode her
                     break;
 
                 case 8:
                     test6 = 8;
+                    //Metode her
                     break;
 
                 case 9:
                     test7 = 9;
+                    //Metode her
                     break;
 
                 default:
