@@ -99,7 +99,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
-        boolean bookingFail=false;
+        boolean bookingFail = false;
 
 
         System.out.println("Write customer name: ");
@@ -129,17 +129,15 @@ public class Main {
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
             System.out.println("Sorry, you cannot book on weekends, choose another date.");
-            while(!bookingFail) {
+            while (!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
                 int answer = input.nextInt();
-                if (answer==0) {
-                    bookingFail=true;
-                }
-                else if (answer==1) {
+                if (answer == 0) {
+                    bookingFail = true;
+                } else if (answer == 1) {
                     Booking();
-                    bookingFail=true;
-                }
-                else {
+                    bookingFail = true;
+                } else {
                 }
             }
             return;
@@ -150,17 +148,15 @@ public class Main {
 
         if (time.isBefore(open) || time.isAfter(close)) {
             System.out.println("You can only book between 10.00 and 18:00");
-            while(!bookingFail) {
+            while (!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
                 int answer = input.nextInt();
-                if (answer==0) {
-                    bookingFail=true;
-                }
-                else if (answer==1) {
+                if (answer == 0) {
+                    bookingFail = true;
+                } else if (answer == 1) {
                     Booking();
-                    bookingFail=true;
-                }
-                else {
+                    bookingFail = true;
+                } else {
                 }
             }
             return;
@@ -177,18 +173,18 @@ public class Main {
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
 
         System.out.println("Press 0 to get back to the menu.");
-        int tilbageTilMenu = input.nextInt();
-        while (!tilbage) {
-            if (tilbageTilMenu == 0) {
-                tilbage = true;
-            } else {
-                System.out.println("Press 0 to go back to the menu.");
-                input.nextInt();
+            while (!tilbage) {
+                int tilbageTilMenu = input.nextInt();
+                if (tilbageTilMenu == 0) {
+                    tilbage = true;
+                }
+                else {
+                    System.out.println("Press 0 to go back to the menu.");
+                }
+
             }
 
-
         }
-    }
 
     public static void CustomerList() {
 
