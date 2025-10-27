@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
     static ArrayList<Customer> customerBookings = new ArrayList<>();
@@ -97,6 +98,7 @@ public class Main {
          public static void Booking() {
 
             Scanner input = new Scanner(System.in);
+            boolean tilbage=false;
 
 
             System.out.println("Write customer name: ");
@@ -131,8 +133,17 @@ public class Main {
             customerBookings.add(c);
 
 
+             System.out.println("The customer "+name+"has now been added to your booking list, with the time "+date+" - "+time+".");
 
-             System.out.println("Kunden "+name+"er nu blevet tilføjet til din booking liste, med tiden "+date+" - "+time+".");
+             System.out.println("Press 0 to get back to the menu.");
+             int tilbageTilMenu = input.nextInt();
+             while(!tilbage) {
+             if (tilbageTilMenu==0) {
+                 tilbage=true;
+             }
+             else {
+                 System.out.println("Press 0 to go back to the menu.");
+             }
 
 
         }
