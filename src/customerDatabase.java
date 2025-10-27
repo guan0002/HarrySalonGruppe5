@@ -1,7 +1,9 @@
 import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class customerDatabase {
-    public static void main(String[] args) throws IOException {
+    public static void loadDatabase() throws IOException {
         FileReader cdb = new FileReader("src/customerDatabase.txt");
         BufferedReader load = new BufferedReader(cdb);
 
@@ -10,22 +12,19 @@ public class customerDatabase {
         {
             String[] entry = line.split(",");
             String name = entry[0];
-            int startNo=Integer.parseInt(entry[1]);
-            char startGroup=entry[2].charAt(0);
-            saveRegistration(name, startNo, startGroup);
+            String email= entry[1];
+            LocalDate date = LocalDate.parse(entry[3]);
+            LocalTime time = LocalTime.parse(entry[4]);
+            saveCustomer(name, email, date, time);
             line = load.readLine();
         }
         load.close();
     } // main
 
-    static void saveRegistration(String name, int startNumber, char startGroup) throws IOException {
-        FileWriter fil = new FileWriter("src/Copenhagen Marathon "+name+".txt");
+    static void saveCustomer(String name, String email, LocalDate date, LocalTime time) throws IOException {
+        FileWriter fil = new FileWriter("src/customerDatabase.txt");
         PrintWriter ud = new PrintWriter(fil);
-        ud.println("Dear "+name+" !");
-        ud.println("We are happy to receive your registration.");
-        ud.println("Your start number is: "+ startNumber);
-        ud.println("You start in start group: "+startGroup);
-        ud.println("Please check in 10 minutes before start.");
+        ud.println("Saved.");
         ud.close();
     }
 }
