@@ -95,66 +95,66 @@ public class Main {
         }
     }
 
-         public static void Booking() {
+    public static void Booking() {
 
-            Scanner input = new Scanner(System.in);
-            boolean tilbage=false;
-
-
-            System.out.println("Write customer name: ");
-            String name = input.nextLine();
-
-            System.out.println("Write customer mail: ");
-            String email = input.nextLine();
-
-            System.out.println("Write year: ");
-            int year = input.nextInt();
-
-            System.out.println("Write month: ");
-            int month = input.nextInt();
-
-            System.out.println("Write day: ");
-            int day = input.nextInt();
-
-            System.out.println("Write hour: ");
-            int hour = input.nextInt();
-
-            System.out.println("Write minute: ");
-            int minute = input.nextInt();
+        Scanner input = new Scanner(System.in);
+        boolean tilbage = false;
 
 
-            LocalDate date = LocalDate.of(year, month, day);
-            LocalTime time = LocalTime.of(hour, minute);
+        System.out.println("Write customer name: ");
+        String name = input.nextLine();
+
+        System.out.println("Write customer mail: ");
+        String email = input.nextLine();
+
+        System.out.println("Write year: ");
+        int year = input.nextInt();
+
+        System.out.println("Write month: ");
+        int month = input.nextInt();
+
+        System.out.println("Write day: ");
+        int day = input.nextInt();
+
+        System.out.println("Write hour: ");
+        int hour = input.nextInt();
+
+        System.out.println("Write minute: ");
+        int minute = input.nextInt();
 
 
-            Customer c = new Customer(name, email, date, time);
+        LocalDate date = LocalDate.of(year, month, day);
+        LocalTime time = LocalTime.of(hour, minute);
 
 
-            customerBookings.add(c);
+        Customer c = new Customer(name, email, date, time);
 
 
-             System.out.println("The customer "+name+"has now been added to your booking list, with the time "+date+" - "+time+".");
+        customerBookings.add(c);
 
-             System.out.println("Press 0 to get back to the menu.");
-             int tilbageTilMenu = input.nextInt();
-             while(!tilbage) {
-             if (tilbageTilMenu==0) {
-                 tilbage=true;
-             }
-             else {
-                 System.out.println("Press 0 to go back to the menu.");
-             }
+
+        System.out.println("The customer " + name + "has now been added to your booking list, with the time " + date + " - " + time + ".");
+
+        System.out.println("Press 0 to get back to the menu.");
+        int tilbageTilMenu = input.nextInt();
+        while (!tilbage) {
+            if (tilbageTilMenu == 0) {
+                tilbage = true;
+            } else {
+                System.out.println("Press 0 to go back to the menu.");
+            }
 
 
         }
+    }
 
     public static void CustomerList() {
 
-        Scanner input=new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Customer List:");
         System.out.println(customerBookings);
 
     }
-
 }
+
