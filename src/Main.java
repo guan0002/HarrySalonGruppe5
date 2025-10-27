@@ -142,6 +142,7 @@ public class Main {
                 tilbage = true;
             } else {
                 System.out.println("Press 0 to go back to the menu.");
+                input.nextInt();
             }
 
 
