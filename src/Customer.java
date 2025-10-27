@@ -17,6 +17,9 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "name";
+        return "Name: "+name+
+                ", Email: "+email+
+                ", Date: "+date+
+                ", Time: "+time;
     }
 }
