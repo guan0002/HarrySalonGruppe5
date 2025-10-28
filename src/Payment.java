@@ -113,6 +113,16 @@ public class Payment {
 
         }
         System.out.println(total);
+        boolean gåTilMenu = false;
+        while(!gåTilMenu) {
+            klipning.nextInt();
+            if (klipning.nextInt()==0) {
+                gåTilMenu=true;
+            }
+            else {
+                System.out.println("You have to press = to gå bacl to the menu!");
+            }
+        }
         return total;
 
     }
