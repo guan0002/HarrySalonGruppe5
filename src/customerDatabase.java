@@ -15,7 +15,6 @@ public class customerDatabase {
             String[] entry = line.split(",");
 
             if (entry.length < 4) {
-                System.out.println("Fejl i linje: " + line); // Debug
                 line = load.readLine();
                 continue; // hopper over den forkerte linje
             }
