@@ -112,7 +112,7 @@ public class Payment {
 
 
         }
-        System.out.println("Your total is:" + total);
+        System.out.println("Your total is: " + total);
         System.out.println("Press 0 to go back to the menu.");
         boolean gåTilMenu = false;
 
