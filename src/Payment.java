@@ -118,7 +118,7 @@ public class Payment {
 
         while(!gåTilMenu) {
             int choice = klipning.nextInt();
-            if (klipning.nextInt()==0) {
+            if (choice==0) {
                 gåTilMenu=true;
             }
             else {
