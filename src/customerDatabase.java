@@ -11,9 +11,15 @@ public class customerDatabase {
         BufferedReader load = new BufferedReader(cdb);
 
         String line = load.readLine();
-        while (line != null)
-        {
+        while (line != null) {
             String[] entry = line.split(",");
+
+            if (entry.length < 4) {
+                System.out.println("Fejl i linje: " + line); // Debug
+                line = load.readLine();
+                continue; // hopper over den forkerte linje
+            }
+
             String name = entry[0];
             String email= entry[1];
             LocalDate date = LocalDate.parse(entry[2]);
