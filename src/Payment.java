@@ -115,8 +115,9 @@ public class Payment {
         System.out.println(total);
         System.out.println("Press 0 to go back to the menu.");
         boolean gåTilMenu = false;
+
         while(!gåTilMenu) {
-            klipning.nextInt();
+            int choice = klipning.nextInt();
             if (klipning.nextInt()==0) {
                 gåTilMenu=true;
             }
