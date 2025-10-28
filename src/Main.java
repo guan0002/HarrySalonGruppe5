@@ -24,7 +24,7 @@ public class Main {
                     "",
                     "Booking 📇",
                     "CustomerList 👥",
-                    "Creditors 💸",
+                    "Delete Booking 💸",
                     "Economics 📈",
                     "Vacation 🏖",
                     "test4",
@@ -52,7 +52,7 @@ public class Main {
                     break;
 
                 case 3:
-                    //Metode her
+                    deleteCustomer();
                     break;
 
                 case 4:
@@ -182,7 +182,9 @@ public class Main {
         }
     }
 
-    public static void CustomerList() {
+    public static void CustomerList() throws IOException {
+
+        customerBookings = customerDatabase.loadDatabase();
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
@@ -202,5 +204,17 @@ public class Main {
 
         }
     }
+
+    public static void deleteCustomer() throws IOException {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the email of the customer you want to delete:");
+        String email = input.nextLine();
+
+        customerDatabase.deleteCustomer(email);
+
+        System.out.println("Press 0 to go back to the main menu.");
+        input.nextLine();
+    }
+
 }
 
