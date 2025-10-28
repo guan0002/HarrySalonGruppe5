@@ -34,7 +34,7 @@ public class customerDatabase {
         FileWriter cbd = new FileWriter("src/customerDatabase.txt", true);
         PrintWriter updateList = new PrintWriter(cbd);
 
-        updateList.println(c.name + "," + c.email + "," + c.date + "," + c.time);
+        updateList.println(c.name + "," + c.email + "," + c.date + "," + c.time + System.lineSeparator());
         updateList.close();
     }
 }

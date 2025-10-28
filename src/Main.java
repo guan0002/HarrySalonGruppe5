@@ -7,7 +7,9 @@ import java.io.*;
 public class Main {
     static ArrayList<Customer> customerBookings = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+
+        customerBookings = customerDatabase.loadDatabase();
 
 
         Scanner scanner = new Scanner(System.in);
@@ -86,7 +88,7 @@ public class Main {
         }
     }
 
-    public static void Booking() {
+    public static void Booking() throws IOException {
 
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
@@ -163,6 +165,7 @@ public class Main {
 
 
         customerBookings.add(c);
+        customerDatabase.saveCustomer(c);
 
 
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ".");
