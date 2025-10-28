@@ -16,7 +16,7 @@ public class Main {
         boolean run = true;
 
         while (run) {
-            System.out.println("Welcome to your booking system!\n");
+            System.out.println("\033[1mWelcome to your booking system! 💻\033[0m\n");
             System.out.println("Press 1-9 to access the different menus\n");
             System.out.println("Press 0 to go back to the main menu\n");
 
@@ -26,7 +26,7 @@ public class Main {
                     "CustomerList",
                     "Creditors",
                     "Economics",
-                    "Payment",
+                    "Vacation",
                     "test4",
                     "test5",
                     "test6",
@@ -41,42 +41,59 @@ public class Main {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-
+            int Booking = 1;
+            int CustomerList = 2;
+            int Creditors = 3;
+            int Economics = 4;
+            int Vacation = 5;
+            int test4 = 6;
+            int test5 = 7;
+            int test6 = 8;
+            int test7 = 9;
 
             switch (choice) {
                 case 1:
+                    Booking = 1;
                     Booking();
                     break;
 
                 case 2:
+                    CustomerList = 2;
                     CustomerList();
                     break;
 
                 case 3:
+                    Creditors = 3;
                     //Metode her
                     break;
 
                 case 4:
+                    Economics = 4;
                     //Metode her
                     break;
 
                 case 5:
+                    Vacation = 5;
                     //Metode her
                     break;
 
                 case 6:
+                    test4 = 6;
                     //Metode her
                     break;
 
                 case 7:
+                    test5 = 7;
                     //Metode her
                     break;
 
                 case 8:
+                    test6 = 8;
                     //Metode her
                     break;
 
                 case 9:
+                    test7 = 9;
                     //Metode her
                     break;
 
