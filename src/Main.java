@@ -22,11 +22,11 @@ public class Main {
 
             String[] printMenus = {
                     "",
-                    "Booking",
-                    "CustomerList",
-                    "Creditors",
-                    "Economics",
-                    "Vacation",
+                    "Booking 📇",
+                    "CustomerList 👥",
+                    "Creditors 💸",
+                    "Economics 📈",
+                    "Vacation 🏖",
                     "test4",
                     "test5",
                     "test6",
@@ -138,9 +138,9 @@ public class Main {
         LocalTime time = LocalTime.of(hour, minute);
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
-            System.out.println("Sorry, you cannot book on weekends, choose another date.");
+            System.out.println("Sorry, you cannot book on weekends, choose another date. ⛔");
             while (!bookingFail) {
-                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
+                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
                 int answer = input.nextInt();
                 if (!input.hasNextInt()) {
                     System.out.println("Please enter a number");
@@ -160,9 +160,9 @@ public class Main {
         LocalTime close = LocalTime.of(18, 0);
 
         if (time.isBefore(open) || time.isAfter(close)) {
-            System.out.println("You can only book between 10.00 and 18:00");
+            System.out.println("\033[31mYou can only book between 10.00 and 18:00\033[0m");
             while (!bookingFail) {
-                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again.");
+                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
                 int answer = input.nextInt();
                 if (answer == 0) {
                     bookingFail = true;
