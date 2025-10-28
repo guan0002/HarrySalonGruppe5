@@ -27,7 +27,7 @@ public class Main {
                     "Delete Booking 💸",
                     "Economics 📈",
                     "Vacation 🏖",
-                    "test4",
+                    "Payment",
                     "test5",
                     "test6",
                     "test7",
@@ -56,7 +56,7 @@ public class Main {
                     break;
 
                 case 4:
-                    //Metode her
+                    Payment.payment();
                     break;
 
                 case 5:
