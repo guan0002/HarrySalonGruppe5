@@ -24,7 +24,7 @@ public class Main {
                     "CustomerList",
                     "Creditors",
                     "Economics",
-                    "Vacation",
+                    "Payment",
                     "test4",
                     "test5",
                     "test6",
