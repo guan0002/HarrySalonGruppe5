@@ -25,12 +25,13 @@ public class Main {
                     "Booking 📇",
                     "CustomerList 👥",
                     "Delete Booking 💸",
-                    "Economics 📈",
-                    "Vacation 🏖",
                     "Payment 💳",
+                    "Vacation 🏖",
+                    "Economics 📈",
                     "test5",
                     "test6",
                     "test7",
+
             };
 
 
