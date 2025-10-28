@@ -120,7 +120,7 @@ public class Payment {
                 gåTilMenu=true;
             }
             else {
-                System.out.println("You have to press = to gå bacl to the menu!");
+                System.out.println("You have to press 0 to go back to the menu!");
             }
         }
         return total;
