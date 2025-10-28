@@ -1,1 +1,1 @@
-Test Testensen,test@email.com,2025-27-10,13:49:00,
+Test Testensen,test@email.com,2025-27-10,13:49

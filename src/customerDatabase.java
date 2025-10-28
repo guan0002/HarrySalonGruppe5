@@ -13,8 +13,8 @@ public class customerDatabase {
             String[] entry = line.split(",");
             String name = entry[0];
             String email= entry[1];
-            LocalDate date = LocalDate.parse(entry[3]);
-            LocalTime time = LocalTime.parse(entry[4]);
+            LocalDate date = LocalDate.parse(entry[2]);
+            LocalTime time = LocalTime.parse(entry[3]);
             saveCustomer(name, email, date, time);
             line = load.readLine();
         }
