@@ -208,10 +208,10 @@ public class Main {
 
     public static void deleteCustomer() throws IOException {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the email of the customer you want to delete:");
-        String email = input.nextLine();
+        System.out.println("Enter the full name of the customer you want to delete:");
+        String name = input.nextLine();
 
-        customerDatabase.deleteCustomer(email);
+        customerDatabase.deleteCustomer(name);
 
         System.out.println("Press 0 to go back to the main menu.");
         input.nextLine();

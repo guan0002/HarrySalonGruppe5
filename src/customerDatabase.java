@@ -43,9 +43,9 @@ public class customerDatabase {
         updateList.close();
     }
 
-    static void deleteCustomer(String email) throws IOException {
+    static void deleteCustomer(String name) throws IOException {
         ArrayList<Customer> customers = loadDatabase();
-        boolean removed = customers.removeIf(c -> c.email.equalsIgnoreCase(email));
+        boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));
 
         if (!removed) {
             System.out.println("Customer not found.");
@@ -53,14 +53,14 @@ public class customerDatabase {
         }
 
 
-        FileWriter writer = new FileWriter("src/customerDatabase.txt", false); // overwrite
+        FileWriter writer = new FileWriter("src/customerDatabase.txt", false);
         PrintWriter dc = new PrintWriter(writer);
 
         for (Customer c : customers) {
             dc.println(c.name + "," + c.email + "," + c.date + "," + c.time);
         }
         dc.close();
-        System.out.println("Customer deleted: " + email);
+        System.out.println("Customer deleted: " + name);
     }
 }
 
