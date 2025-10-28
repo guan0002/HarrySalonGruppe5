@@ -1,9 +1,12 @@
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class customerDatabase {
-    public static void loadDatabase() throws IOException {
+    public static ArrayList<Customer> loadDatabase() throws IOException {
+        ArrayList<Customer> customers = new ArrayList<>();
+
         FileReader cdb = new FileReader("src/customerDatabase.txt");
         BufferedReader load = new BufferedReader(cdb);
 
@@ -15,16 +18,23 @@ public class customerDatabase {
             String email= entry[1];
             LocalDate date = LocalDate.parse(entry[2]);
             LocalTime time = LocalTime.parse(entry[3]);
-            saveCustomer(name, email, date, time);
+
+            Customer c = new Customer(name, email, date, time);
+            customers.add(c);
+
             line = load.readLine();
         }
         load.close();
-    } // main
+        return customers;
+    }
 
-    static void saveCustomer(String name, String email, LocalDate date, LocalTime time) throws IOException {
-        FileWriter fil = new FileWriter("src/customerDatabase.txt");
-        PrintWriter ud = new PrintWriter(fil);
-        ud.println("Saved.");
-        ud.close();
+
+
+    static void saveCustomer(Customer c) throws IOException {
+        FileWriter cbd = new FileWriter("src/customerDatabase.txt", true);
+        PrintWriter updateList = new PrintWriter(cbd);
+
+        updateList.println(c.name + "," + c.email + "," + c.date + "," + c.time);
+        updateList.close();
     }
 }
