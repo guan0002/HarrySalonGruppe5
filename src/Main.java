@@ -189,7 +189,9 @@ public class Main {
         boolean tilbage = false;
 
         System.out.println("Customer List:");
-        System.out.println(customerBookings);
+        for (Customer c : customerBookings) {
+            System.out.println(c);
+        }
         System.out.println("Press 0 to get back to the menu.");
         while (!tilbage) {
             int tilbageTilMenu = input.nextInt();
