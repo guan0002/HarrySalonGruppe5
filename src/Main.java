@@ -193,6 +193,17 @@ public class Main {
 
     public static void CustomerList() throws IOException {
 
+        Scanner inputpass = new Scanner(System.in);
+
+        String correctPassword = "hairyharry";
+        System.out.print("Enter password to view customer details: ");
+        String enteredPassword = inputpass.nextLine();
+
+        if (!enteredPassword.equals(correctPassword)) {
+            System.out.println("Wrong password!");
+            return;
+        }
+
         customerBookings = customerDatabase.loadDatabase();
 
         Scanner input = new Scanner(System.in);
