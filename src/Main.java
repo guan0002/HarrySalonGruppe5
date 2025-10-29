@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Main {
-    static ArrayList<Customer> customerBookings = new ArrayList<>();
+    static ArrayList<customerDatabase.Customer> customerBookings = new ArrayList<>();
 
     public static void main(String[] args) throws IOException{
 
@@ -169,7 +169,7 @@ public class Main {
         }
 
 
-        Customer c = new Customer(name, email, date, time);
+        customerDatabase.Customer c = new customerDatabase.Customer(name, email, date, time);
 
 
         customerBookings.add(c);
@@ -206,11 +206,12 @@ public class Main {
 
         customerBookings = customerDatabase.loadDatabase();
 
+        customerBookings.sort(null);
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
 
         System.out.println("Customer List:");
-        for (Customer c : customerBookings) {
+        for (customerDatabase.Customer c : customerBookings) {
             System.out.println(c);
         }
         System.out.println("Press 0 to get back to the menu.");

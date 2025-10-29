@@ -1,6 +1,7 @@
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class customerDatabase {
@@ -31,9 +32,8 @@ public class customerDatabase {
         }
         load.close();
         return customers;
+
     }
-
-
 
     static void saveCustomer(Customer c) throws IOException {
         FileWriter cbd = new FileWriter("src/customerDatabase.txt", true);
@@ -42,6 +42,30 @@ public class customerDatabase {
         updateList.println(c.name + "," + c.email + "," + c.date + "," + c.time + System.lineSeparator());
         updateList.close();
     }
+    static class Customer implements Comparable<Customer> {
+        String name;
+        String email;
+        LocalDate date;
+        LocalTime time;
+
+Customer(String name, String email, LocalDate date, LocalTime time) {
+    this.name = name;
+        this.email = email;
+        this.date = date;
+        this.time = time;
+}
+
+public String toString() {
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+    return date.format(dateFormatter) + " " + time.format(timeFormatter) + " " + name + " " + email;
+        }
+
+public int compareTo(Customer o) {
+        return this.date.compareTo(o.date);
+}
+    }
+
 
     static void deleteCustomer(String name) throws IOException {
         ArrayList<Customer> customers = loadDatabase();
@@ -51,7 +75,6 @@ public class customerDatabase {
             System.out.println("Customer not found.");
             return;
         }
-
 
         FileWriter writer = new FileWriter("src/customerDatabase.txt", false);
         PrintWriter dc = new PrintWriter(writer);
