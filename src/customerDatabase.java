@@ -53,21 +53,40 @@ public class customerDatabase {
 
     }
 
-    public static void saveCustomersToFile() throws IOException {
-        ArrayList<Customer> customers = loadDatabase();
+    public static void saveCustomersToFile(ArrayList<Customer> customers) throws IOException {
+
+        FileWriter file = new FileWriter("src/customerDatabase.txt", false);
+        PrintWriter out = new PrintWriter(file);
+
+        for (Customer c : customers) {
+            out.println(c.toString());
+        }
+
+        out.close();
     }
 
     static void saveCustomer(Customer c) throws IOException {
-        FileWriter cbd = new FileWriter("src/customerDatabase.txt", true);
-        PrintWriter updateList = new PrintWriter(cbd);
+        FileWriter file = new FileWriter("src/customerDatabase.txt", true);
+        PrintWriter updateList = new PrintWriter(file);
 
-        updateList.println(c.name + "," + c.email + "," + c.date + "," + c.time + System.lineSeparator());
+        updateList.println(c.toString());
         updateList.close();
+    }
+
+    public static Customer findCustomerByName(String name) throws IOException {
+        ArrayList<Customer> customer = loadDatabase();
+
+        for (Customer c : customer) {
+            if (name.equalsIgnoreCase(name)) {
+                return c;
+            }
+        }
+        return null;
     }
 
 
     static void deleteCustomer(String name) throws IOException {
-        ArrayList<Customer> customers = customerDatabase.loadDatabase();
+        ArrayList<Customer> customers = loadDatabase();
         boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));
 
         if (!removed) {
@@ -79,7 +98,7 @@ public class customerDatabase {
         PrintWriter dc = new PrintWriter(writer);
 
         for (Customer c : customers) {
-            dc.println(c.name + "," + c.email + "," + c.date + "," + c.time);
+            dc.println(c.toString());
         }
         dc.close();
         System.out.println("Customer deleted: " + name);

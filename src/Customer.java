@@ -28,7 +28,6 @@ public class Customer implements Comparable<Customer> {
         this.lastProducts = products;
     }
 
-@Override
     public String toString() {
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
     DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
