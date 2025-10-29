@@ -31,13 +31,18 @@ public class Customer implements Comparable<Customer> {
     public String toString() {
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
     DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+
     String productList = String.join(";", lastProducts);
-    return name + "," + email + "," + date + "," + time + "," +
-            lastPayment + "kr," + lastHaircutType + "," + productList;
+    return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + email + "," +
+            lastPayment + "," + lastHaircutType + "," + productList;
 }
 
     public int compareTo(Customer o) {
-        return this.date.compareTo(o.date);
+        int cmp = this.date.compareTo(o.date);
+        if (cmp == 0) {
+            cmp = this.time.compareTo(o.time);
+        }
+        return cmp;
     }
 
 
