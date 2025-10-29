@@ -93,6 +93,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
         boolean bookingFail = false;
+        boolean timeTaken = false;
 
 
         System.out.println("Write customer name: ");
@@ -160,22 +161,33 @@ public class Main {
 
         }
 
-       /* for (Customer existing : customerBookings) {
+        for (Customer existing : customerBookings) {
             if (existing.getDate().equals(date) && existing.getTime().equals(time)) {
                 System.out.println("This date: "+ date + " at " + time + "Is unfortunately booked");
                 System.out.println("Please choose another time");
+                while (!timeTaken) {
+                    System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
+                    int choice = input.nextInt();
+                    if (choice == 0) {
+                        timeTaken = true;
+
+                    } else if (choice == 1){
+                        Booking();
+                        timeTaken = true;
+                    }
+                }
                 return;
             }
         }
 
 
-        customerDatabase.Customer c = new customerDatabase.Customer(name, email, date, time);
+        Customer c = new Customer(name, email, date, time);
 
 
         customerBookings.add(c);
         customerDatabase.saveCustomer(c);
 
-*/
+
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ". ✅" );
 
         System.out.println("Press 0 to get back to the menu.");
