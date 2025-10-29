@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Customer {
+public class Customer2 {
 
     String name;
     LocalDate date;
@@ -11,7 +11,7 @@ public class Customer {
     String lastHaircutType;
     String[] lastProducts;
 
-    public Customer(String name, String email, LocalDate date, LocalTime time) {
+    public Customer2(String name, String email, LocalDate date, LocalTime time) {
         this.name=name;
         this.email=email;
         this.date=date;
