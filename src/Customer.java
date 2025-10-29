@@ -29,7 +29,7 @@ public class Customer implements Comparable<Customer> {
     }
 
     public String toString() {
-    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
     DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
     String productList = String.join(";", lastProducts);
