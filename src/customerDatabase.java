@@ -20,10 +20,15 @@ public class customerDatabase {
                 continue; // hopper over den forkerte linje
             }
 
-            String name = entry[0];
-            String email= entry[1];
-            LocalDate date = LocalDate.parse(entry[2]);
-            LocalTime time = LocalTime.parse(entry[3]);
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+
+            LocalDate date = LocalDate.parse(entry[0].trim(), dateFormatter);
+            LocalTime time = LocalTime.parse(entry[1].trim(), timeFormatter);
+            String name = entry[2];
+            String email= entry[3];
+
+
 
             Customer c = new Customer(name, email, date, time);
             if (entry.length > 4) {
@@ -84,7 +89,6 @@ public class customerDatabase {
         return null;
     }
 
-
     static void deleteCustomer(String name) throws IOException {
         ArrayList<Customer> customers = loadDatabase();
         boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));
@@ -104,5 +108,6 @@ public class customerDatabase {
         System.out.println("Customer deleted: " + name);
     }
 }
+
 
 
