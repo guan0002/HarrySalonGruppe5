@@ -50,15 +50,15 @@ public class Payment {
                 if (addProduct.equalsIgnoreCase("Yes")) {
                     System.out.println("Hair Wax = H \n Shampoo = S \n product1 = P1 \n product2 = P2 \n product3 = P3");
                     String product = klipning.nextLine().trim().toUpperCase();
-                    if (product.equalsIgnoreCase("H")) total = M + H;
-                    else if (product.equalsIgnoreCase("S")) total = M + S;
-                    else if (product.equalsIgnoreCase("P1")) total = M + P1;
-                    else if (product.equalsIgnoreCase("P2")) total = M + P2;
-                    else if (product.equalsIgnoreCase("P3")) total = M + P3;
-                    else total = M;
+                    if (product.equalsIgnoreCase("H")) total = total + M + H;
+                    else if (product.equalsIgnoreCase("S")) total = total + M + S;
+                    else if (product.equalsIgnoreCase("P1")) total = total+ M + P1;
+                    else if (product.equalsIgnoreCase("P2")) total = total + M + P2;
+                    else if (product.equalsIgnoreCase("P3")) total = total +M + P3;
+                    else total = total + M;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
-                    total = M;
+                    total = total + M;
                     haircut = true;
                 } else {
                     System.out.println("Write either Yes or No.");
@@ -76,15 +76,15 @@ public class Payment {
                 if (addProduct.equalsIgnoreCase("Yes")) {
                     System.out.println("Hair Wax = H \n Shampoo = S \n product1 = P1 \n product2 = P2 \n product3 = P3");
                     String product = klipning.nextLine().trim().toUpperCase();
-                    if (product.equalsIgnoreCase("H")) total = W + H;
-                    else if (product.equalsIgnoreCase("S")) total = W + S;
-                    else if (product.equalsIgnoreCase("P1")) total = W + P1;
-                    else if (product.equalsIgnoreCase("P2")) total = W + P2;
-                    else if (product.equalsIgnoreCase("P3")) total = W + P3;
-                    else total = W;
+                    if (product.equalsIgnoreCase("H")) total = total + W + H;
+                    else if (product.equalsIgnoreCase("S")) total = total + W + S;
+                    else if (product.equalsIgnoreCase("P1")) total = total + W + P1;
+                    else if (product.equalsIgnoreCase("P2")) total = total + W + P2;
+                    else if (product.equalsIgnoreCase("P3")) total = total + W + P3;
+                    else total = total + W;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
-                    total = W;
+                    total = total + W;
                     haircut = true;
                 } else {
                     System.out.println("Write either Yes or No.");
@@ -102,29 +102,29 @@ public class Payment {
                     System.out.println("Hair Wax = H \n Shampoo = S \n product1 = P1 \n product2 = P2 \n product3 = P3");
                     String product = klipning.nextLine().trim().toUpperCase();
                     if (product.equalsIgnoreCase("H")) {
-                        total = C + H;
+                        total = total + C + H;
                         chosenProduct[productIndex++] = "Hair Wax";
                     }
                     else if (product.equalsIgnoreCase("S")) {
-                        total = C + S;
+                        total = total + C + S;
                         chosenProduct[productIndex++] = "Shampoo";
                     }
                     else if (product.equalsIgnoreCase("P1")) {
-                        total = C + P1;
+                        total = total + C + P1;
                         chosenProduct[productIndex++] = "Product1";
                     }
                     else if (product.equalsIgnoreCase("P2")) {
-                        total = C + P2;
+                        total = total + C + P2;
                         chosenProduct[productIndex++] = "Product2";
                     }
                     else if (product.equalsIgnoreCase("P3")) {
-                        total = C + P3;
+                        total = total + C + P3;
                         chosenProduct[productIndex++] = "Product3";
                     }
-                    else total = C;
+                    else total = total + C;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
-                    total = C;
+                    total = total + C;
                     haircut = true;
                 } else {
                     System.out.println("Write either Yes or No.");
