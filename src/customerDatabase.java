@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class customerDatabase {
     public static ArrayList<Customer> loadDatabase() throws IOException {
@@ -20,7 +21,7 @@ public class customerDatabase {
                 continue; // hopper over den forkerte linje
             }
 
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH);
             DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
             LocalDate date = LocalDate.parse(entry[0].trim(), dateFormatter);

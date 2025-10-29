@@ -1,4 +1,5 @@
 import java.io.IOException;
+
 import java.util.Scanner;
 
 public class Payment {
@@ -132,7 +133,6 @@ public class Payment {
             } else {
                 System.out.println("You have to press either M, W or C.");
             }
-
 
         }
         System.out.println("Your total is: " + total+"kr");
