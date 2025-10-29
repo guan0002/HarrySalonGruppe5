@@ -57,7 +57,7 @@ public class Main {
                     break;
 
                 case 4:
-                    Payment.payment();
+                   // Payment.payment();
                     break;
 
                 case 5:
