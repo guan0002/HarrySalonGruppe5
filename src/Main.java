@@ -57,7 +57,18 @@ public class Main {
                     break;
 
                 case 4:
-                   // Payment.payment();
+                    System.out.println("Enter customer name for payment:");
+                    String name = scanner.nextLine();
+
+                    Customer c = customerDatabase.findCustomerByName(name);
+
+                    if (c != null) {
+                        Payment pay = new Payment(c, 0, "Card");
+                        pay.payment();
+                    } else {
+                                System.out.println("");
+                            }
+
                     break;
 
                 case 5:

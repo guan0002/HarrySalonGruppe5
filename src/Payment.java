@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Payment {
@@ -12,7 +13,7 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    public void payment() {
+    public void payment() throws IOException {
         Scanner klipning = new Scanner(System.in);
         double M = 299.99;
         double W = 599.99;
@@ -30,6 +31,9 @@ public class Payment {
         System.out.println("Press W for womens cut");
         System.out.println("Press C for childrens cut");
         String chooseHaircut;
+
+        String haircutType = "";
+        String[] chosenProduct = new String[10];
 
         while (!haircut) {
             chooseHaircut = klipning.nextLine().trim().toUpperCase();
@@ -113,6 +117,11 @@ public class Payment {
 
         }
         System.out.println("Your total is: " + total+"kr");
+
+        customer.setPaymentDate(total, haircutType, chosenProduct);
+        customerDatabase.saveCustomer(customer);
+        System.out.println("✅ Payment saved for customer: "+customer.name);
+
 
         System.out.println("Press 0 to go back to the menu.");
         boolean gåTilMenu = false;

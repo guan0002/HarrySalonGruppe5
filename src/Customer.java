@@ -33,7 +33,7 @@ public class Customer implements Comparable<Customer> {
     DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
     String productList = String.join(";", lastProducts);
     return name + "," + email + "," + date + "," + time + "," +
-            lastPayment + "," + lastHaircutType + "," + productList;
+            lastPayment + "kr," + lastHaircutType + "," + productList;
 }
 
     public int compareTo(Customer o) {
