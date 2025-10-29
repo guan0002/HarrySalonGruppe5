@@ -12,7 +12,7 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    public static double payment() {
+    public void payment() {
         Scanner klipning = new Scanner(System.in);
         double M = 299.99;
         double W = 599.99;
@@ -112,7 +112,8 @@ public class Payment {
 
 
         }
-        System.out.println("Your total is: " + total);
+        System.out.println("Your total is: " + total+"kr");
+
         System.out.println("Press 0 to go back to the menu.");
         boolean gåTilMenu = false;
 
@@ -125,7 +126,6 @@ public class Payment {
                 System.out.println("You have to press 0 to go back to the menu!");
             }
         }
-        return total;
 
     }
 }
