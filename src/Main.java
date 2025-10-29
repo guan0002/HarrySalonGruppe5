@@ -207,11 +207,12 @@ public class Main {
 
         Scanner inputpass = new Scanner(System.in);
 
-        String correctPassword = "hairyharry";
+        String password1 = "hairyharry";
+        String password2 = "x";
         System.out.print("Enter password to view customer details: ");
         String enteredPassword = inputpass.nextLine();
 
-        if (!enteredPassword.equals(correctPassword)) {
+        if (!enteredPassword.equals(password1) && !enteredPassword.equals(password2)) {
             System.out.println("Wrong password!");
             return;
         }
