@@ -3,3 +3,4 @@ Sometimes it,Just@Works.com,2011-11-11,11:11,0.0,,null;null;null;null;null;null;
 Adam,Adamsen@gmail.com,2025-11-10,11:00,0.0,,null;null;null;null;null;null;null;null;null;null
 Erik,Erik@,2025-10-30,13:00,0.0,,null;null;null;null;null;null;null;null;null;null
 mathias,mathias,2025-10-30,12:00,0.0,,null;null;null;null;null;null;null;null;null;null
+27 okt. 2025,13:49,Test Testensen,test@email.com,325.98kr,,null;null;null;null;null;null;null;null;null;null
