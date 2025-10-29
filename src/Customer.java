@@ -33,4 +33,13 @@ public class Customer {
         return name + "," + email + "," + date + "," + time + "," +
                 lastPayment + "," + lastHaircutType + "," + productList;
     }
+
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
 }

@@ -160,6 +160,14 @@ public class Main {
 
         }
 
+        for (Customer existing : customerBookings) {
+            if (existing.getDate().equals(date) && existing.getTime().equals(time)) {
+                System.out.println("This date: "+ date + " at " + time + "Is unfortunately booked");
+                System.out.println("Please choose another time");
+                return;
+            }
+        }
+
 
         Customer c = new Customer(name, email, date, time);
 
