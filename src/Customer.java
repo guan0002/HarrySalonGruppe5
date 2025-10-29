@@ -1,7 +1,8 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
-public class Customer2 {
+public class Customer implements Comparable<Customer> {
 
     String name;
     LocalDate date;
@@ -11,7 +12,7 @@ public class Customer2 {
     String lastHaircutType;
     String[] lastProducts;
 
-    public Customer2(String name, String email, LocalDate date, LocalTime time) {
+    public Customer(String name, String email, LocalDate date, LocalTime time) {
         this.name=name;
         this.email=email;
         this.date=date;
@@ -27,12 +28,19 @@ public class Customer2 {
         this.lastProducts = products;
     }
 
-    @Override
+@Override
     public String toString() {
-        String productList = String.join(";", lastProducts);
-        return name + "," + email + "," + date + "," + time + "," +
-                lastPayment + "," + lastHaircutType + "," + productList;
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+    String productList = String.join(";", lastProducts);
+    return name + "," + email + "," + date + "," + time + "," +
+            lastPayment + "," + lastHaircutType + "," + productList;
+}
+
+    public int compareTo(Customer o) {
+        return this.date.compareTo(o.date);
     }
+
 
 
     public LocalDate getDate() {
@@ -43,3 +51,5 @@ public class Customer2 {
         return time;
     }
 }
+
+

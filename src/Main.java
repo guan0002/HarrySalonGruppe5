@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Main {
-    static ArrayList<customerDatabase.Customer> customerBookings = new ArrayList<>();
+    static ArrayList<Customer> customerBookings = new ArrayList<>();
 
     public static void main(String[] args) throws IOException{
 
@@ -160,7 +160,7 @@ public class Main {
 
         }
 
-        for (Customer existing : customerBookings) {
+       /* for (Customer existing : customerBookings) {
             if (existing.getDate().equals(date) && existing.getTime().equals(time)) {
                 System.out.println("This date: "+ date + " at " + time + "Is unfortunately booked");
                 System.out.println("Please choose another time");
@@ -175,7 +175,7 @@ public class Main {
         customerBookings.add(c);
         customerDatabase.saveCustomer(c);
 
-
+*/
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ". ✅" );
 
         System.out.println("Press 0 to get back to the menu.");
@@ -211,7 +211,7 @@ public class Main {
         boolean tilbage = false;
 
         System.out.println("Customer List:");
-        for (customerDatabase.Customer c : customerBookings) {
+        for (Customer c : customerBookings) {
             System.out.println(c);
         }
         System.out.println("Press 0 to get back to the menu.");
