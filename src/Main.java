@@ -44,7 +44,10 @@ public class Main {
                     break;
 
                 case 2:
-                    CustomerList();
+                    ArrayList<Customer> updatedList = customerList.show();
+                    if (updatedList != null) {
+                        customerBookings = updatedList;
+                    }
                     break;
 
                 case 3:
@@ -182,44 +185,6 @@ public class Main {
         }
     }
 
-    public static void CustomerList() throws IOException {
-
-
-
-        Scanner inputpass = new Scanner(System.in);
-
-        String password1 = "hairyharry";
-        String password2 = "x";
-        System.out.print("Enter password to view customer details: ");
-        String enteredPassword = inputpass.nextLine();
-
-        if (!enteredPassword.equals(password1) && !enteredPassword.equals(password2)) {
-            System.out.println("Wrong password!");
-            return;
-        }
-
-        customerBookings = customerDatabase.loadDatabase();
-
-        customerBookings.sort(null);
-        Scanner input = new Scanner(System.in);
-        boolean tilbage = false;
-
-        System.out.println("Customer Details:");
-        for (Customer c : customerBookings) {
-            System.out.println(c);
-        }
-        System.out.println("Press 0 to get back to the menu.");
-        while (!tilbage) {
-            int tilbageTilMenu = input.nextInt();
-            if (tilbageTilMenu == 0) {
-                tilbage = true;
-            } else {
-                System.out.println("Press 0 to go back to the menu.");
-            }
-
-        }
-
-    }
 
     public static void deleteCustomer() throws IOException {
         Scanner input = new Scanner(System.in);
