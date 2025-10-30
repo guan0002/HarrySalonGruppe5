@@ -34,7 +34,7 @@ public class Customer implements Comparable<Customer> {
 
         String productList = String.join(";", lastProducts);
         return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + name + "," + email + "," +
-                lastPayment + "kr," + lastHaircutType + "," + productList;
+                lastPayment + "," + lastHaircutType + "," + productList;
     }
 
     public int compareTo(Customer o) {

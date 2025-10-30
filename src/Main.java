@@ -66,6 +66,9 @@ public class Main {
                     if (c != null) {
                         Payment pay = new Payment(c, 0, "Card");
                         pay.payment();
+
+                        customerBookings = customerDatabase.loadDatabase();
+
                     } else {
                         System.out.println("");
                     }
