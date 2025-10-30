@@ -28,7 +28,7 @@ public class Customer implements Comparable<Customer> {
         this.lastHaircutType = haircutType;
         this.lastProducts = products;
     }
-
+//Formatering af dato & tid til arrayliste
     public String toString() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -50,7 +50,7 @@ public class Customer implements Comparable<Customer> {
                 lastHaircutType + "," +
                 productList;
     }
-
+    //Bruger compareTo til at filtrere Arrayliste baseret på dato & tidspunkt
     public int compareTo(Customer o) {
         int cmp = this.date.compareTo(o.date);
         if (cmp == 0) {
