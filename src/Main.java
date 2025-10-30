@@ -141,10 +141,10 @@ public class Main {
             while (!bookingFail) {
                 System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
                 int answer = input.nextInt();
-                if (!input.hasNextInt()) {
+
                     System.out.println("Please enter a number");
 
-                } else if (answer == 0) {
+                  if (answer == 0) {
                     bookingFail = true;
                 } else if (answer == 1) {
                     Booking();
