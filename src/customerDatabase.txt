@@ -1,1 +1,3 @@
+10 12 2025,12:30,Leon,leon@live.dk,0.0kr,,null;null;null;null;null;null;null;null;null;null
+10 12 2025,12:30,Leon,leon@live.dk,340.98kr,Mens Cut,null;null;null;null;null;null;null;null;null;null
 30 okt. 2025,12:00,Mathias Holst,mathias@gmail.com,0.0kr,,null;null;null;null;null;null;null;null;null;null
