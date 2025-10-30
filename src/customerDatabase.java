@@ -21,7 +21,7 @@ public class customerDatabase {
                 continue; // hopper over den forkerte linje
             }
 
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy", Locale.ENGLISH);
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
             LocalDate date = LocalDate.parse(entry[0].trim(), dateFormatter);

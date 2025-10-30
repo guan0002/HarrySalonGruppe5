@@ -117,24 +117,26 @@ public class Main {
         System.out.println("Write customer mail: ");
         String email = input.nextLine();
 
-        System.out.println("Write year: ");
-        int year = input.nextInt();
+        System.out.println("Please enter a date dd/mm/yyyy:");
+        String dateStr = input.nextLine();
 
-        System.out.println("Write month: ");
-        int month = input.nextInt();
-
-        System.out.println("Write day: ");
-        int day = input.nextInt();
-
-        System.out.println("Write hour: ");
+        LocalDate date = null;
+        try {
+            java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            date = LocalDate.parse(dateStr, formatter);
+        } catch (java.time.format.DateTimeParseException e) {
+            System.out.println("Invalid date format");
+            Booking();
+            return;
+        }
+    System.out.println("Write hour: ");
         int hour = input.nextInt();
 
         System.out.println("Write minute: ");
         int minute = input.nextInt();
 
+LocalTime time = LocalTime.of(hour, minute);
 
-        LocalDate date = LocalDate.of(year, month, day);
-        LocalTime time = LocalTime.of(hour, minute);
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
             System.out.println("Sorry, you cannot book on weekends, choose another date. ⛔");
@@ -254,7 +256,6 @@ public class Main {
             }
 
         }
-
 
     }
 

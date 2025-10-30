@@ -30,7 +30,7 @@ public class Customer implements Comparable<Customer> {
     }
 
     public String toString() {
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
         String productList = "";
@@ -42,8 +42,13 @@ public class Customer implements Comparable<Customer> {
                 productList += p;
             }
         }
-        return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + name + "," + email + "," +
-                lastPayment + "," + lastHaircutType + "," + productList;
+        return date.format(dateFormatter) + "," +
+                time.format(timeFormatter) + "," +
+                name + "," +
+                email + "," +
+                lastPayment + "," +
+                lastHaircutType + "," +
+                productList;
     }
 
     public int compareTo(Customer o) {
