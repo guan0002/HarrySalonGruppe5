@@ -83,7 +83,7 @@ public class customerDatabase {
         ArrayList<Customer> customer = loadDatabase();
 
         for (Customer c : customer) {
-            if (name.equalsIgnoreCase(name)) {
+            if (c.name.equalsIgnoreCase(name)) {
                 return c;
             }
         }

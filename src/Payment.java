@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Payment {
@@ -138,7 +139,25 @@ public class Payment {
         System.out.println("Your total is: " + total+"kr");
 
         customer.setPaymentDate(total, haircutType, chosenProduct);
-        customerDatabase.saveCustomer(customer);
+
+
+
+        ArrayList<Customer> customers = customerDatabase.loadDatabase();
+
+        for (Customer c : customers) {
+            if (c.name.equalsIgnoreCase(customer.name)
+                    && c.email.equalsIgnoreCase(customer.email)
+                    && c.date.equals(customer.date)) {
+
+                c.lastPayment = customer.lastPayment;
+                c.lastHaircutType = customer.lastHaircutType;
+                c.lastProducts = customer.lastProducts;
+                break;
+            }
+        }
+
+        customerDatabase.saveCustomersToFile(customers);
+
         System.out.println("✅ Payment saved for customer: "+customer.name);
 
 

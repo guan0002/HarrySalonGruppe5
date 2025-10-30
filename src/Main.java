@@ -216,6 +216,8 @@ public class Main {
 
     public static void CustomerList() throws IOException {
 
+
+
         Scanner inputpass = new Scanner(System.in);
 
         String password1 = "hairyharry";
@@ -248,6 +250,8 @@ public class Main {
             }
 
         }
+
+
     }
 
     public static void deleteCustomer() throws IOException {
