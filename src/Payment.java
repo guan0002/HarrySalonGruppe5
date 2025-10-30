@@ -25,7 +25,7 @@ public class Payment {
         double P2 = 20.99;
         double P3 = 15.99;
         boolean haircut = false;
-        double total=0;
+        double total = 0;
 
         System.out.println("Which type of haircut has the customer recieved?");
         System.out.println("Press M for mens cut");
@@ -52,9 +52,9 @@ public class Payment {
                     String product = klipning.nextLine().trim().toUpperCase();
                     if (product.equalsIgnoreCase("H")) total = total + M + H;
                     else if (product.equalsIgnoreCase("S")) total = total + M + S;
-                    else if (product.equalsIgnoreCase("P1")) total = total+ M + P1;
+                    else if (product.equalsIgnoreCase("P1")) total = total + M + P1;
                     else if (product.equalsIgnoreCase("P2")) total = total + M + P2;
-                    else if (product.equalsIgnoreCase("P3")) total = total +M + P3;
+                    else if (product.equalsIgnoreCase("P3")) total = total + M + P3;
                     else total = total + M;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
@@ -104,24 +104,19 @@ public class Payment {
                     if (product.equalsIgnoreCase("H")) {
                         total = total + C + H;
                         chosenProduct[productIndex++] = "Hair Wax";
-                    }
-                    else if (product.equalsIgnoreCase("S")) {
+                    } else if (product.equalsIgnoreCase("S")) {
                         total = total + C + S;
                         chosenProduct[productIndex++] = "Shampoo";
-                    }
-                    else if (product.equalsIgnoreCase("P1")) {
+                    } else if (product.equalsIgnoreCase("P1")) {
                         total = total + C + P1;
                         chosenProduct[productIndex++] = "Product1";
-                    }
-                    else if (product.equalsIgnoreCase("P2")) {
+                    } else if (product.equalsIgnoreCase("P2")) {
                         total = total + C + P2;
                         chosenProduct[productIndex++] = "Product2";
-                    }
-                    else if (product.equalsIgnoreCase("P3")) {
+                    } else if (product.equalsIgnoreCase("P3")) {
                         total = total + C + P3;
                         chosenProduct[productIndex++] = "Product3";
-                    }
-                    else total = total + C;
+                    } else total = total + C;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
                     total = total + C;
@@ -135,22 +130,21 @@ public class Payment {
             }
 
         }
-        System.out.println("Your total is: " + total+"kr");
+        System.out.println("Your total is: " + total + "kr");
 
         customer.setPaymentDate(total, haircutType, chosenProduct);
         customerDatabase.saveCustomer(customer);
-        System.out.println("✅ Payment saved for customer: "+customer.name);
+        System.out.println("✅ Payment saved for customer: " + customer.name);
 
 
         System.out.println("Press 0 to go back to the menu.");
         boolean gåTilMenu = false;
 
-        while(!gåTilMenu) {
+        while (!gåTilMenu) {
             int choice = klipning.nextInt();
-            if (choice==0) {
-                gåTilMenu=true;
-            }
-            else {
+            if (choice == 0) {
+                gåTilMenu = true;
+            } else {
                 System.out.println("You have to press 0 to go back to the menu!");
             }
         }

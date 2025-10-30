@@ -13,12 +13,12 @@ public class Customer implements Comparable<Customer> {
     String[] lastProducts;
 
     public Customer(String name, String email, LocalDate date, LocalTime time) {
-        this.name=name;
-        this.email=email;
-        this.date=date;
-        this.time=time;
+        this.name = name;
+        this.email = email;
+        this.date = date;
+        this.time = time;
         this.lastPayment = 0;
-        this.lastHaircutType="";
+        this.lastHaircutType = "";
         this.lastProducts = new String[10];
     }
 
@@ -29,13 +29,13 @@ public class Customer implements Comparable<Customer> {
     }
 
     public String toString() {
-    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
-    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
-    String productList = String.join(";", lastProducts);
-    return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + name + "," + email + "," +
-            lastPayment + "kr," + lastHaircutType + "," + productList;
-}
+        String productList = String.join(";", lastProducts);
+        return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + name + "," + email + "," +
+                lastPayment + "kr," + lastHaircutType + "," + productList;
+    }
 
     public int compareTo(Customer o) {
         int cmp = this.date.compareTo(o.date);
@@ -44,7 +44,6 @@ public class Customer implements Comparable<Customer> {
         }
         return cmp;
     }
-
 
 
     public LocalDate getDate() {
