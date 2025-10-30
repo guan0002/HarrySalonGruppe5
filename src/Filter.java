@@ -11,7 +11,7 @@ public class Filter {
 
             if (input.matches("\\d+")) {
                 int number = Integer.parseInt(input);
-                if (number >= 0) {
+                if (number > 0) {
                     return number;
                 } else {
                     System.out.println("Please a valid number:");
