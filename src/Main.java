@@ -23,7 +23,7 @@ public class Main {
             String[] printMenus = {
                     "",
                     "Booking 📇",
-                    "CustomerList 👥",
+                    "Customer Details 👥",
                     "Delete Booking 💸",
                     "Payment 💳",
                     "Vacation 🏖",
