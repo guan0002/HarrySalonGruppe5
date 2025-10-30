@@ -105,6 +105,8 @@ public class Main {
 
     public static void Booking() throws IOException {
 
+        customerBookings = customerDatabase.loadDatabase();
+
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
         boolean bookingFail = false;
@@ -165,7 +167,7 @@ public class Main {
 
         for (Customer existing : customerBookings) {
             if (existing.getDate().equals(date) && existing.getTime().equals(time)) {
-                System.out.println("This date: " + date + " at " + time + "Is unfortunately booked");
+                System.out.println("This date: " + date + " at " + time + " Is unfortunately booked");
                 System.out.println("Please choose another time");
                 while (!timeTaken) {
                     System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
