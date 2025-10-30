@@ -37,7 +37,7 @@ public class Main {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-
+//Switch statement der kalder på de forskellige metoder
             switch (choice) {
                 case 1:
                     Booking();
@@ -93,7 +93,8 @@ public class Main {
         System.out.println("Write customer mail: ");
         String email = input.nextLine();
 
-
+//Formatering af dato ved bookning
+//Bruger Try & Catch til at filtrere uønsket input i konsollen
         LocalDate date = null;
         while (date == null) {
             System.out.println("Please enter a date dd/mm/yyyy:");
@@ -105,7 +106,8 @@ public class Main {
                 System.out.println("Invalid date format. Please try again.");
             }
         }
-
+        //Formatering af tidspunkt ved bookning
+//Bruger Try & Catch til at filtrere uønsket input i konsollen
         LocalTime time = null;
         while (time == null) {
             System.out.println("Please enter a time HH:mm:");
@@ -117,7 +119,6 @@ public class Main {
                 System.out.println("Invalid time format. Please try again.");
             }
         }
-
         LocalTime open = LocalTime.of(10, 0);
         LocalTime close = LocalTime.of(18, 0);
 
@@ -186,12 +187,12 @@ public class Main {
 
 
 
-        Scanner inputpass = new Scanner(System.in);
+        Scanner inputPass = new Scanner(System.in);
 
         String password1 = "hairyharry";
         String password2 = "x";
         System.out.print("Enter password to view customer details: ");
-        String enteredPassword = inputpass.nextLine();
+        String enteredPassword = inputPass.nextLine();
 
         if (!enteredPassword.equals(password1) && !enteredPassword.equals(password2)) {
             System.out.println("Wrong password!");
