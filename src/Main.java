@@ -117,44 +117,29 @@ public class Main {
         System.out.println("Write customer mail: ");
         String email = input.nextLine();
 
-        System.out.println("Please enter a date dd/mm/yyyy:");
-        String dateStr = input.nextLine();
 
         LocalDate date = null;
-        try {
-            java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            date = LocalDate.parse(dateStr, formatter);
-        } catch (java.time.format.DateTimeParseException e) {
-            System.out.println("Invalid date format");
-            Booking();
-            return;
-        }
-    System.out.println("Write hour: ");
-        int hour = input.nextInt();
-
-        System.out.println("Write minute: ");
-        int minute = input.nextInt();
-
-LocalTime time = LocalTime.of(hour, minute);
-
-
-        if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
-            System.out.println("Sorry, you cannot book on weekends, choose another date. ⛔");
-            while (!bookingFail) {
-                System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
-                int answer = input.nextInt();
-
-                    System.out.println("Please enter a number");
-
-                  if (answer == 0) {
-                    bookingFail = true;
-                } else if (answer == 1) {
-                    Booking();
-                    bookingFail = true;
-                } else {
-                }
+        while (date == null) {
+            System.out.println("Please enter a date dd/mm/yyyy:");
+            String dateStr = input.nextLine();
+            try {
+                java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                date = LocalDate.parse(dateStr, formatter);
+            } catch (java.time.format.DateTimeParseException e) {
+                System.out.println("Invalid date format. Please try again.");
             }
-            return;
+        }
+
+        LocalTime time = null;
+        while (time == null) {
+            System.out.println("Please enter a time HH:mm:");
+            String timeStr = input.nextLine();
+            try {
+                java.time.format.DateTimeFormatter timeFormatter = java.time.format.DateTimeFormatter.ofPattern("HH:mm");
+                time = LocalTime.parse(timeStr, timeFormatter);
+            } catch (java.time.format.DateTimeParseException e) {
+                System.out.println("Invalid time format. Please try again.");
+            }
         }
 
         LocalTime open = LocalTime.of(10, 0);
