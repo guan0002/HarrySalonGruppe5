@@ -18,7 +18,7 @@ public class Main {
 
         while (run) {
             System.out.println("\033[1mWelcome to your booking system! 💻\033[0m\n");
-            System.out.println("Press 1-9 to access the different menus\n");
+            System.out.println("Press 1-6 to access the different menus\n");
             System.out.println("Press 0 to go back to the main menu\n");
 
             String[] printMenus = {
@@ -29,10 +29,6 @@ public class Main {
                     "Payment 💳",
                     "Vacation 🏖",
                     "Economics 📈",
-                    "test5",
-                    "test6",
-                    "test7",
-
             };
 
 
@@ -73,26 +69,6 @@ public class Main {
                         System.out.println("");
                     }
 
-                    break;
-
-                case 5:
-                    //Metode her
-                    break;
-
-                case 6:
-                    //Metode her
-                    break;
-
-                case 7:
-                    //Metode her
-                    break;
-
-                case 8:
-                    //Metode her
-                    break;
-
-                case 9:
-                    //Metode her
                     break;
 
                 default:
