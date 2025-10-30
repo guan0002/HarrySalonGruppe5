@@ -5,9 +5,10 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Main {
+
     static ArrayList<Customer> customerBookings = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
         customerBookings = customerDatabase.loadDatabase();
 
@@ -66,8 +67,8 @@ public class Main {
                         Payment pay = new Payment(c, 0, "Card");
                         pay.payment();
                     } else {
-                                System.out.println("");
-                            }
+                        System.out.println("");
+                    }
 
                     break;
 
@@ -174,7 +175,7 @@ public class Main {
 
         for (Customer existing : customerBookings) {
             if (existing.getDate().equals(date) && existing.getTime().equals(time)) {
-                System.out.println("This date: "+ date + " at " + time + "Is unfortunately booked");
+                System.out.println("This date: " + date + " at " + time + "Is unfortunately booked");
                 System.out.println("Please choose another time");
                 while (!timeTaken) {
                     System.out.println("Press 0 to get back to the menu or press 1 to try making a booking again. \uD83C\uDFE0");
@@ -182,7 +183,7 @@ public class Main {
                     if (choice == 0) {
                         timeTaken = true;
 
-                    } else if (choice == 1){
+                    } else if (choice == 1) {
                         Booking();
                         timeTaken = true;
                     }
@@ -199,7 +200,7 @@ public class Main {
         customerDatabase.saveCustomer(c);
 
 
-        System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ". ✅" );
+        System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ". ✅");
 
         System.out.println("Press 0 to get back to the menu.");
         while (!tilbage) {

@@ -27,8 +27,7 @@ public class customerDatabase {
             LocalDate date = LocalDate.parse(entry[0].trim(), dateFormatter);
             LocalTime time = LocalTime.parse(entry[1].trim(), timeFormatter);
             String name = entry[2];
-            String email= entry[3];
-
+            String email = entry[3];
 
 
             Customer c = new Customer(name, email, date, time);
@@ -109,7 +108,5 @@ public class customerDatabase {
         System.out.println("Customer deleted: " + name);
     }
 }
-
-
 
 
