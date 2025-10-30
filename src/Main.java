@@ -207,6 +207,7 @@ LocalTime time = LocalTime.of(hour, minute);
 
         System.out.println("The customer " + name + " has now been added to your booking list, with the time " + date + " - " + time + ". ✅");
 
+
         System.out.println("Press 0 to get back to the menu.");
         while (!tilbage) {
             int tilbageTilMenu = input.nextInt();

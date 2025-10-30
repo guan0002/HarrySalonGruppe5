@@ -51,15 +51,25 @@ public class Payment {
                 if (addProduct.equalsIgnoreCase("Yes")) {
                     System.out.println("Hair Wax = H \n Shampoo = S \n product1 = P1 \n product2 = P2 \n product3 = P3");
                     String product = klipning.nextLine().trim().toUpperCase();
-                    if (product.equalsIgnoreCase("H")) total = total + M + H;
-                    else if (product.equalsIgnoreCase("S")) total = total + M + S;
-                    else if (product.equalsIgnoreCase("P1")) total = total + M + P1;
-                    else if (product.equalsIgnoreCase("P2")) total = total + M + P2;
-                    else if (product.equalsIgnoreCase("P3")) total = total + M + P3;
-                    else total = total + M;
+                    if (product.equalsIgnoreCase("H")) {
+                        total = total + H + H;
+                        chosenProduct[productIndex++] = "Hair Wax";
+                    } else if (product.equalsIgnoreCase("S")) {
+                        total = total + H + S;
+                        chosenProduct[productIndex++] = "Shampoo";
+                    } else if (product.equalsIgnoreCase("P1")) {
+                        total = total + H + P1;
+                        chosenProduct[productIndex++] = "Product1";
+                    } else if (product.equalsIgnoreCase("P2")) {
+                        total = total + H + P2;
+                        chosenProduct[productIndex++] = "Product2";
+                    } else if (product.equalsIgnoreCase("P3")) {
+                        total = total + H + P3;
+                        chosenProduct[productIndex++] = "Product3";
+                    } else total = total + H;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
-                    total = total + M;
+                    total = total + H;
                     haircut = true;
                 } else {
                     System.out.println("Write either Yes or No.");
@@ -77,12 +87,22 @@ public class Payment {
                 if (addProduct.equalsIgnoreCase("Yes")) {
                     System.out.println("Hair Wax = H \n Shampoo = S \n product1 = P1 \n product2 = P2 \n product3 = P3");
                     String product = klipning.nextLine().trim().toUpperCase();
-                    if (product.equalsIgnoreCase("H")) total = total + W + H;
-                    else if (product.equalsIgnoreCase("S")) total = total + W + S;
-                    else if (product.equalsIgnoreCase("P1")) total = total + W + P1;
-                    else if (product.equalsIgnoreCase("P2")) total = total + W + P2;
-                    else if (product.equalsIgnoreCase("P3")) total = total + W + P3;
-                    else total = total + W;
+                    if (product.equalsIgnoreCase("H")) {
+                        total = total + W + H;
+                        chosenProduct[productIndex++] = "Hair Wax";
+                    } else if (product.equalsIgnoreCase("S")) {
+                        total = total + W + S;
+                        chosenProduct[productIndex++] = "Shampoo";
+                    } else if (product.equalsIgnoreCase("P1")) {
+                        total = total + W + P1;
+                        chosenProduct[productIndex++] = "Product1";
+                    } else if (product.equalsIgnoreCase("P2")) {
+                        total = total + W + P2;
+                        chosenProduct[productIndex++] = "Product2";
+                    } else if (product.equalsIgnoreCase("P3")) {
+                        total = total + W + P3;
+                        chosenProduct[productIndex++] = "Product3";
+                    } else total = total + W;
                     haircut = true;
                 } else if (addProduct.equalsIgnoreCase("No")) {
                     total = total + W;
