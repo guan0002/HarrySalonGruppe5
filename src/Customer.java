@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class Customer implements Comparable<Customer> {
 
@@ -32,7 +33,15 @@ public class Customer implements Comparable<Customer> {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
-        String productList = String.join(";", lastProducts);
+        String productList = "";
+        for (String p : lastProducts) {
+            if (p != null && !p.isEmpty()) {
+                if (!productList.isEmpty()) {
+                    productList += ";";
+                }
+                productList += p;
+            }
+        }
         return date.format(dateFormatter) + "," + time.format(timeFormatter) + "," + name + "," + email + "," +
                 lastPayment + "," + lastHaircutType + "," + productList;
     }
