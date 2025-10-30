@@ -129,13 +129,19 @@ public class Main {
             Booking();
             return;
         }
-    System.out.println("Write hour: ");
-        int hour = input.nextInt();
+        System.out.println("Please enter a time HH:mm:");
+        String timeStr = input.nextLine();
 
-        System.out.println("Write minute: ");
-        int minute = input.nextInt();
+        LocalTime time = null;
+        try {
+            java.time.format.DateTimeFormatter timeFormatter = java.time.format.DateTimeFormatter.ofPattern("HH:mm");
+            time = LocalTime.parse(timeStr, timeFormatter);
+        } catch (java.time.format.DateTimeParseException e) {
+            System.out.println("Invalid time format");
+            Booking();
+            return;
 
-LocalTime time = LocalTime.of(hour, minute);
+        }
 
 
         if (date.getDayOfWeek().toString().equals("SATURDAY") || date.getDayOfWeek().toString().equals("SUNDAY")) {
