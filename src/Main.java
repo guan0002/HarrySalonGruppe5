@@ -234,7 +234,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean tilbage = false;
 
-        System.out.println("Customer List:");
+        System.out.println("Customer Details:");
         for (Customer c : customerBookings) {
             System.out.println(c);
         }
