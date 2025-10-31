@@ -9,7 +9,7 @@ public class customerDatabase {
     public static ArrayList<Customer> loadDatabase() throws IOException {
         ArrayList<Customer> customers = new ArrayList<>();
 
-        FileReader cdb = new FileReader("src/customerDatabase.txt");
+        FileReader cdb = new FileReader("src/customerDatabase.txt");//Tilgår customerDatabase.txt
         BufferedReader load = new BufferedReader(cdb);
 
         String line = load.readLine();
@@ -57,7 +57,7 @@ public class customerDatabase {
         return customers;
 
     }
-
+    //opdaterer customerDatabase.txt med ny kunde
     public static void saveCustomersToFile(ArrayList<Customer> customers) throws IOException {
 
         FileWriter file = new FileWriter("src/customerDatabase.txt", false);
@@ -69,7 +69,7 @@ public class customerDatabase {
 
         out.close();
     }
-
+    //opdaterer kunde i customerDatabase.txt
     static void saveCustomer(Customer c) throws IOException {
         FileWriter file = new FileWriter("src/customerDatabase.txt", true);
         PrintWriter updateList = new PrintWriter(file);
@@ -77,7 +77,7 @@ public class customerDatabase {
         updateList.println(c.toString());
         updateList.close();
     }
-
+//søgefunktion til at finde en kunde ud fra navn
     public static Customer findCustomerByName(String name) throws IOException {
         ArrayList<Customer> customer = loadDatabase();
 
@@ -88,10 +88,10 @@ public class customerDatabase {
         }
         return null;
     }
-
+//sletter kunde
     static void deleteCustomer(String name) throws IOException {
         ArrayList<Customer> customers = loadDatabase();
-        boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));
+        boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));   //finder kunde ud fra indtastet navn
 
         if (!removed) {
             System.out.println("Customer not found.");

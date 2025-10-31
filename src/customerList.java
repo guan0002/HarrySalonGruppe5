@@ -11,17 +11,17 @@ public class customerList {
     Scanner inputpass = new Scanner(System.in);
 
 
-    String password1 = "hairyharry";
-    String password2 = "x";
+    String password1 = "hairyharry";                //harry's password
+    String password2 = "x";                         //password til testing *(under udvikling af systemet)*
     System.out.print("Enter password to view customer details: ");
     String enteredPassword = inputpass.nextLine();
 
-    if (!enteredPassword.equals(password1) && !enteredPassword.equals(password2)) {
+    if (!enteredPassword.equals(password1) && !enteredPassword.equals(password2)) {     //password2 = test password
         System.out.println("Wrong password!");
         return null;
     }
 
-        ArrayList<Customer> customerBookings = customerDatabase.loadDatabase();
+        ArrayList<Customer> customerBookings = customerDatabase.loadDatabase();     //loader database listen før vi kalder den
 
     customerBookings.sort(null);
     Scanner input = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class customerList {
         }
     }
 
-        return customerBookings; // return updated list
+        return customerBookings;
     }
 
 }
