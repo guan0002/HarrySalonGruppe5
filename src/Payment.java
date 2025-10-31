@@ -151,6 +151,7 @@ public class Payment {
             }
 
         }
+        total = Math.round(total * 100.0)/100.0;
         System.out.println("Your total is: " + total + "kr");
 
         customer.setPaymentDate(total, haircutType, chosenProduct);
