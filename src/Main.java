@@ -85,7 +85,7 @@ public class Main {
         customerBookings = customerDatabase.loadDatabase();
 
         Scanner input = new Scanner(System.in);
-        boolean tilbage = false;
+        boolean Back = false;
         boolean bookingFail = false;
         boolean timeTaken = false;
 
@@ -173,10 +173,10 @@ public class Main {
 
 
         System.out.println("Press 0 to get back to the menu.");
-        while (!tilbage) {
-            int tilbageTilMenu = input.nextInt();
-            if (tilbageTilMenu == 0) {
-                tilbage = true;
+        while (!Back) {
+            int BackToMenu = input.nextInt();
+            if (BackToMenu == 0) {
+                Back = true;
             } else {
                 System.out.println("Press 0 to go back to the menu.");
             }
