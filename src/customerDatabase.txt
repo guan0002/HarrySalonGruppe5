@@ -1,3 +1,10 @@
-31/10/2025,15:00,Adam,Adam@,330.98,Mens Cut,
-31/10/2025,17:00,Bo,Bo@,230.98000000000002,Childrens Cut,Hair Wax
-31/10/2025,18:00,Sanne,Sanne@,625.98,Womens Cut,Product1
+31/10/2025,10:00,Test0,Test0@email.dk,0.0,,
+31/10/2025,10:30,Test1,Test1@email.dk,0.0,,
+31/10/2025,11:00,Test2,Test2@email.dk,0.0,,
+31/10/2025,11:30,Test3,Test3@email.dk,0.0,,
+31/10/2025,12:00,Test4,Test4@email.dk,0.0,,
+31/10/2025,12:30,Test5,Test5@email.dk,0.0,,
+31/10/2025,13:00,Test6,Test6@email.dk,0.0,,
+31/10/2025,13:30,Test7,Test7@email.dk,0.0,,
+31/10/2025,14:00,Test8,Test8@email.dk,0.0,,
+31/10/2025,14:30,Test9,Test9@email.dk,0.0,,
