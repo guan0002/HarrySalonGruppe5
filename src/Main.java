@@ -80,36 +80,36 @@ public class Main {
         }
     }
 
-    public static void Booking() throws IOException {
+    public static void Booking() throws IOException {    // Her starter booking metoden
 
-        customerBookings = customerDatabase.loadDatabase();
-
-        Scanner input = new Scanner(System.in);
+        customerBookings = customerDatabase.loadDatabase(); // CustomerBookings kalder på customerDatabase
+                                                            // LoadDatabase opdaterer bookingen i arraylisten
+        Scanner input = new Scanner(System.in); // Her opretter vi en scanner, som vi kalder input
         boolean Back = false;
         boolean bookingFail = false;
-        boolean timeTaken = false;
-
+        boolean timeTaken = false; // Her har vi oprettet 3 variabler med datatypen boolean
+                                    // De 3 variabler bruger vi længere ned i metoden
 
         System.out.println("Write customer name: ");
-        String name = input.nextLine();
-
+        String name = input.nextLine(); // Her opretter vi en scanner, som skal skrive en String
+                                        // Man skal skrive sit navn
         System.out.println("Write customer mail: ");
-        String email = input.nextLine();
+        String email = input.nextLine(); // Her opretter vi en scanner, som skal skrive en String
+                                            // Man skal skrive sin mail
 
-//Funktion der sætter date, month og year sammen. Bruger Pare exception til at filtrere uønsket outputs ud.
-        LocalDate date = null;
-        while (date == null) {
+        LocalDate date = null; // Her opretter vi en varabel, der hedder date. Datatype=LocalDate, værdi=null
+        while (date == null) { // Her opretter vi en løkke, hvor vi sammenligner date og null
             System.out.println("Please enter a date dd/mm/yyyy:");
-            String dateStr = input.nextLine();
+            String dateStr = input.nextLine(); // Her opretter vi en scanner, som skal skrive en dato
             try {
                 java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 date = LocalDate.parse(dateStr, formatter);
-            } catch (java.time.format.DateTimeParseException e) {
-                System.out.println("Invalid date format. Please try again.");
+            } catch (java.time.format.DateTimeParseException e) { //Funktion der sætter date, month og year sammen
+                System.out.println("Invalid date format. Please try again."); // Bruger Pare exception til at filtrere uønsket outputs ud.
             }
         }
 //Funktion der sætter time og minut sammen. Bruger Pare exception til at filtrere uønsket outputs ud.
-        LocalTime time = null;
+        LocalTime time = null; // Her opretter vi en varabel, der hedder time. Datatype=LocalTime, værdi=null
         while (time == null) {
             System.out.println("Please enter a time HH:mm:");
             String timeStr = input.nextLine();

@@ -9,3 +9,4 @@
 31/10/2025,14:00,Test8,Test8@email.dk,0.0,,
 31/10/2025,14:30,Test9,Test9@email.dk,0.0,,
 03/11/2025,10:00,Gustav,Gustav@,215.98,Children´s Haircut,Product3
+03/11/2025,11:00,Malik,Malik@,325.98,Men´s haircut,HairBrush
