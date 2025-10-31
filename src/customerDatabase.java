@@ -91,7 +91,7 @@ public class customerDatabase {
 
     static void deleteCustomer(String name) throws IOException {
         ArrayList<Customer> customers = loadDatabase();
-        boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));
+        boolean removed = customers.removeIf(c -> c.name.equalsIgnoreCase(name));   //finder kunde ud fra indtastet navn
 
         if (!removed) {
             System.out.println("Customer not found.");
