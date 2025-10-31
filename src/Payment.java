@@ -29,9 +29,9 @@ public class Payment {
         double total = 0;
 
         System.out.println("Which type of haircut has the customer recieved?");
-        System.out.println("Press M for mens cut");
-        System.out.println("Press W for womens cut");
-        System.out.println("Press C for childrens cut");
+        System.out.println("Press M for Men´s haircut");
+        System.out.println("Press W for Women´s haircut");
+        System.out.println("Press C for Children´s haircut");
         String chooseHaircut;
 
         String haircutType = "";
@@ -41,7 +41,7 @@ public class Payment {
         while (!haircut) {
             chooseHaircut = klipning.nextLine().trim().toUpperCase();
             if (chooseHaircut.equalsIgnoreCase("M")) {
-                haircutType = "Mens Cut";
+                haircutType = "Men´s haircut";
                 System.out.println("The price on the haircut will be " + M + "kr.");
                 System.out.println("Would you like to add a product to the purchase?");
                 System.out.println("Yes or No?");
@@ -77,7 +77,7 @@ public class Payment {
 
 
             } else if (chooseHaircut.equalsIgnoreCase("W")) {
-                haircutType = "Womens Cut";
+                haircutType = "Women´s Haircut";
                 System.out.println("The price on the haircut will be " + W + "kr.");
                 System.out.println("Would you like to add a product to the purchase?");
                 System.out.println("Yes or No?");
@@ -112,7 +112,7 @@ public class Payment {
                 }
 
             } else if (chooseHaircut.equalsIgnoreCase("C")) {
-                haircutType = "Childrens Cut";
+                haircutType = "Children´s Haircut";
                 System.out.println("The price on the haircut will be " + C + "kr.");
                 System.out.println("Would you like to add a product to the purchase?");
                 System.out.println("Yes or No?");
