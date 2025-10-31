@@ -96,7 +96,7 @@ public class Main {
         System.out.println("Write customer mail: ");
         String email = input.nextLine();
 
-
+//Funktion der sætter date, month og year sammen. Bruger Pare exception til at filtrere uønsket outputs ud.
         LocalDate date = null;
         while (date == null) {
             System.out.println("Please enter a date dd/mm/yyyy:");
@@ -108,7 +108,7 @@ public class Main {
                 System.out.println("Invalid date format. Please try again.");
             }
         }
-
+//Funktion der sætter time og minut sammen. Bruger Pare exception til at filtrere uønsket outputs ud.
         LocalTime time = null;
         while (time == null) {
             System.out.println("Please enter a time HH:mm:");
